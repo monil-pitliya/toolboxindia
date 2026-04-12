@@ -1,0 +1,26 @@
+# robots.txt for ToolBox India
+# https://toolboxindia.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://toolboxindia.com/sitemap.xml
+
+# Allow all major search engine crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# Disallow dev/hidden directories
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /api/
