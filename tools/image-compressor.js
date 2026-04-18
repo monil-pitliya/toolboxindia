@@ -48,7 +48,7 @@
                         <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,image/webp,image/bmp,image/gif">
                         <p class="drop-zone-info">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            Supports JPG, PNG, WebP, BMP, GIF &bull; Max 50MB per file &bull; Up to 20 files at once
+                            Supports JPG, PNG, WebP, BMP, GIF &bull; Max 200MB per file &bull; Up to 20 files at once
                         </p>
                     </div>
                 </div>
@@ -210,6 +210,7 @@
                             Download All
                         </button>
                     </div>
+                    <div id="icChainActions"></div>
                     <div class="image-results-grid" id="resultsGrid"></div>
                 </div>
             `;
@@ -221,6 +222,16 @@
             initSimpleMode();
             initAdvancedControls();
             initButtons();
+
+            // Consume chained file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'image.jpg');
+                    setTimeout(() => handleFiles([file]), 100);
+                }
+            }
         },
 
         destroy() {
@@ -356,7 +367,7 @@
     function handleFiles(newFiles) {
         const validFiles = newFiles.filter(f => {
             if (!f.type.startsWith('image/')) return false;
-            if (f.size > 50 * 1024 * 1024) return false;
+            if (f.size > 200 * 1024 * 1024) return false;
             return true;
         });
         if (validFiles.length === 0) return;
@@ -815,6 +826,15 @@
 
         container.classList.add('visible');
         container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Cross-tool chaining for compressed images
+        if (window.ToolChain && compressedResults.length > 0) {
+            const firstResult = compressedResults[0];
+            const chainContainer = document.getElementById('icChainActions');
+            if (chainContainer && firstResult.compressedBlob) {
+                ToolChain.inject(chainContainer, firstResult.compressedBlob, firstResult.outputName, 'image-compressor');
+            }
+        }
     }
 
     // ===== Downloads =====

@@ -140,6 +140,7 @@
                                 Convert Another
                             </button>
                         </div>
+                        <div id="p2pChainActions"></div>
                     </div>
                 </div>
 
@@ -223,6 +224,16 @@
             // Start Over
             const startOver = document.getElementById('p2pStartOver');
             if (startOver) startOver.addEventListener('click', resetTool);
+
+            // Cross-tool chaining: consume pending file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'presentation.pptx');
+                    setTimeout(() => handlePPTXFile(file), 100);
+                }
+            }
         }, 100);
     }
 
@@ -1353,6 +1364,15 @@
 
             const dlBtn = document.getElementById('p2pDownloadBtn');
             if (dlBtn) dlBtn._pdfBlob = pdfBlob;
+
+            // Inject cross-tool chaining actions
+            if (window.ToolChain && dlBtn._pdfBlob) {
+                const name = (pptxFile ? pptxFile.name.replace(/\.pptx$/i, '') : 'presentation') + '.pdf';
+                const chainContainer = document.getElementById('p2pChainActions');
+                if (chainContainer) {
+                    ToolChain.inject(chainContainer, dlBtn._pdfBlob, name, 'ppt-to-pdf');
+                }
+            }
 
         } catch (err) {
             console.error('PDF conversion failed:', err);

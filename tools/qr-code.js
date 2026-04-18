@@ -148,6 +148,7 @@
                                             Copy
                                         </button>
                                     </div>
+                                    <div id="qrChainActions"></div>
                                 </div>
                             </div>
                         </div>
@@ -698,6 +699,18 @@
             preview.innerHTML = '';
             qrInstance.append(preview);
             dlRow.style.display = 'flex';
+
+            // Cross-tool chaining: offer to use the generated QR in another tool
+            if (window.ToolChain && qrInstance) {
+                qrInstance.getRawData('png').then(blob => {
+                    if (blob) {
+                        const chainContainer = document.getElementById('qrChainActions');
+                        if (chainContainer) {
+                            ToolChain.inject(chainContainer, blob, 'qr-code.png', 'qr-code');
+                        }
+                    }
+                });
+            }
         } catch (err) {
             console.error('QR generation error:', err);
             preview.innerHTML = '<p class="qr-error">Error generating QR code. Try different content.</p>';
@@ -713,6 +726,8 @@
                 <p>Enter content to generate QR code</p>
             </div>`;
         if (dlRow) dlRow.style.display = 'none';
+        const chainContainer = document.getElementById('qrChainActions');
+        if (chainContainer) chainContainer.innerHTML = '';
         qrInstance = null;
     }
 

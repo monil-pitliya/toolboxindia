@@ -102,7 +102,7 @@
                                 <input type="file" id="pdfedFileInput" accept="application/pdf" style="display:none">
                                 <p class="drop-zone-info">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    PDF files only &bull; Max 50MB &bull; 100% private
+                                    PDF files only &bull; Max 200MB &bull; 100% private
                                 </p>
                             </div>
                         </div>
@@ -179,7 +179,11 @@
                             <div class="pdfed-save-wrap">
                                 <button class="btn-success pdfed-save-btn" id="pdfedSaveBtn">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                    Save &amp; Download PDF
+                                    Download PDF
+                                </button>
+                                <button class="pdfed-chain-btn" id="pdfedUseInToolBtn" title="Use edited PDF in another tool without downloading">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                                    Use in Other Tool
                                 </button>
                                 <button class="btn-secondary" id="pdfedNewBtn">Edit another PDF</button>
                             </div>
@@ -228,6 +232,16 @@
             setupDropZone();
             setupToolbar();
             setupBottomBar();
+
+            // Cross-tool chaining: auto-load file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'chained.pdf');
+                    ToolChain.injectBackBanner(document.getElementById('pdfedRoot'));
+                    setTimeout(() => loadPdf(file), 100);
+                }
+            }
             setupSignatureModal();
             setupKeyboard();
         },
@@ -322,7 +336,7 @@
        PDF LOADING
        ======================================== */
     async function loadPdf(file) {
-        if (file.size > 50 * 1024 * 1024) { alert('File too large. Max 50MB.'); return; }
+        if (file.size > 200 * 1024 * 1024) { alert('File too large. Max 200MB.'); return; }
 
         showScreen('pdfedLoading');
         updateLoading('Loading libraries...', 'Setting up editor engine');
@@ -331,7 +345,9 @@
             await ensureLibraries();
 
             updateLoading('Reading PDF...', 'Parsing pages');
-            pdfBytes = await file.arrayBuffer();
+            const rawBuffer = await file.arrayBuffer();
+            // Store a Uint8Array COPY — pdf.js may detach the original ArrayBuffer
+            pdfBytes = new Uint8Array(rawBuffer).slice();
             pdfDoc = await pdfjsLib.getDocument({ data: new Uint8Array(pdfBytes) }).promise;
             totalPages = pdfDoc.numPages;
             currentPage = 1;
@@ -1561,6 +1577,7 @@
         document.getElementById('pdfedPrevPage')?.addEventListener('click', () => switchPage(-1));
         document.getElementById('pdfedNextPage')?.addEventListener('click', () => switchPage(1));
         document.getElementById('pdfedSaveBtn')?.addEventListener('click', savePdf);
+        document.getElementById('pdfedUseInToolBtn')?.addEventListener('click', useInOtherTool);
         document.getElementById('pdfedNewBtn')?.addEventListener('click', () => {
             if (fabricCanvas) { fabricCanvas.dispose(); fabricCanvas = null; }
             pdfDoc = null; pdfBytes = null;
@@ -1653,25 +1670,18 @@
         return objects.length > 0;
     }
 
-    async function savePdf() {
-        if (isSaving || !fabricCanvas || !pdfDoc) return;
-        isSaving = true;
+    /**
+     * Build the edited PDF blob (shared by Download and Use-in-Tool).
+     * Returns a Blob or throws on error.
+     */
+    async function buildEditedPdfBlob() {
+        // Save current page annotations
+        pageAnnotations[currentPage] = fabricCanvas.toJSON();
 
-        const saveBtn = document.getElementById('pdfedSaveBtn');
-        if (saveBtn) {
-            saveBtn.disabled = true;
-            saveBtn.innerHTML = '<span class="spinner"></span> Saving...';
-        }
+        const srcPdfDoc = await pdfLib.PDFDocument.load(pdfBytes.slice(), { ignoreEncryption: true });
+        const newPdfDoc = await pdfLib.PDFDocument.create();
 
-        try {
-            // Save current page annotations
-            pageAnnotations[currentPage] = fabricCanvas.toJSON();
-
-            // Load original PDF bytes into pdf-lib to preserve quality
-            const srcPdfDoc = await pdfLib.PDFDocument.load(pdfBytes, { ignoreEncryption: true });
-            const newPdfDoc = await pdfLib.PDFDocument.create();
-
-            for (let p = 1; p <= totalPages; p++) {
+        for (let p = 1; p <= totalPages; p++) {
                 if (!pageHasAnnotations(p)) {
                     // No annotations — copy original page as-is (preserves vectors, text, quality)
                     const [copiedPage] = await newPdfDoc.copyPages(srcPdfDoc, [p - 1]);
@@ -1753,29 +1763,72 @@
             }
 
             const pdfBytesOut = await newPdfDoc.save();
-            const blob = new Blob([pdfBytesOut], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'edited.pdf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            return new Blob([pdfBytesOut], { type: 'application/pdf' });
+    }
 
+    /**
+     * Show/hide spinner on a button.
+     */
+    function _setBtnLoading(btn, loading, defaultHTML) {
+        if (!btn) return;
+        btn.disabled = loading;
+        btn.innerHTML = loading ? '<span class="spinner"></span> Saving...' : defaultHTML;
+    }
+
+    const _saveBtnHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF`;
+    const _chainBtnHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg> Use in Other Tool`;
+
+    /**
+     * Download the edited PDF.
+     */
+    async function savePdf() {
+        if (isSaving || !fabricCanvas || !pdfDoc) return;
+        isSaving = true;
+        const saveBtn = document.getElementById('pdfedSaveBtn');
+        _setBtnLoading(saveBtn, true);
+
+        try {
+            const blob = await buildEditedPdfBlob();
+            ToolUtils.downloadBlob(blob, 'edited.pdf');
         } catch (err) {
             console.error('Save PDF error:', err);
             alert('Failed to save PDF: ' + err.message);
         }
 
         isSaving = false;
-        if (saveBtn) {
-            saveBtn.disabled = false;
-            saveBtn.innerHTML = `
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Save &amp; Download PDF
-            `;
+        _setBtnLoading(saveBtn, false, _saveBtnHTML);
+    }
+
+    /**
+     * Build the edited PDF and show cross-tool chain options (no download).
+     */
+    async function useInOtherTool() {
+        if (isSaving || !fabricCanvas || !pdfDoc) return;
+        isSaving = true;
+        const chainBtn = document.getElementById('pdfedUseInToolBtn');
+        _setBtnLoading(chainBtn, true);
+
+        try {
+            const blob = await buildEditedPdfBlob();
+
+            if (window.ToolChain) {
+                let chainContainer = document.getElementById('pdfedChainBar');
+                if (!chainContainer) {
+                    chainContainer = document.createElement('div');
+                    chainContainer.id = 'pdfedChainBar';
+                    chainContainer.style.cssText = 'position:fixed;bottom:60px;left:50%;transform:translateX(-50%);z-index:999;max-width:700px;width:90%;';
+                    document.getElementById('pdfedRoot').appendChild(chainContainer);
+                }
+                chainContainer.innerHTML = '';
+                ToolChain.inject(chainContainer, blob, 'edited.pdf', 'pdf-editor');
+            }
+        } catch (err) {
+            console.error('Build PDF error:', err);
+            alert('Failed to build PDF: ' + err.message);
         }
+
+        isSaving = false;
+        _setBtnLoading(chainBtn, false, _chainBtnHTML);
     }
 
 })();

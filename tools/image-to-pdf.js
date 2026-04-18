@@ -156,6 +156,7 @@
                                 Start Over
                             </button>
                         </div>
+                        <div id="i2pChainActions"></div>
                     </div>
                 </div>
             `;
@@ -164,6 +165,16 @@
         init() {
             initDropZone();
             initEditor();
+
+            // Consume chained file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'image.jpg');
+                    setTimeout(() => handleFiles([file]), 100);
+                }
+            }
         },
 
         destroy() {
@@ -444,6 +455,14 @@
             // Store blob on download button
             const dlBtn = document.getElementById('i2pDownloadBtn');
             if (dlBtn) dlBtn._pdfBlob = pdfBlob;
+
+            // Inject cross-tool chaining actions
+            if (window.ToolChain && dlBtn._pdfBlob) {
+                const chainContainer = document.getElementById('i2pChainActions');
+                if (chainContainer) {
+                    ToolChain.inject(chainContainer, dlBtn._pdfBlob, 'images-to-pdf.pdf', 'image-to-pdf');
+                }
+            }
 
         } catch (err) {
             console.error('PDF generation failed:', err);

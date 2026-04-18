@@ -55,7 +55,7 @@
                             <input type="file" id="bgrFileInput" accept="image/jpeg,image/png,image/webp">
                             <p class="drop-zone-info">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                JPG, PNG, WebP &bull; Max 10MB &bull; Works best with people, products & objects
+                                JPG, PNG, WebP &bull; Max 200MB &bull; Works best with people, products & objects
                             </p>
                         </div>
                     </div>
@@ -106,6 +106,9 @@
                                 Download Image
                             </button>
                         </div>
+
+                        <!-- Tool Chain Actions -->
+                        <div id="bgrChainActions"></div>
                     </div>
                 </div>
             `;
@@ -114,6 +117,16 @@
         init() {
             initDropZone();
             initButtons();
+
+            // Consume chained file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'image.png');
+                    setTimeout(() => processFile(file), 100);
+                }
+            }
         },
 
         destroy() {
@@ -163,8 +176,8 @@
     // ===== Main Process =====
     async function processFile(file) {
         if (!file.type.startsWith('image/') || isProcessing) return;
-        if (file.size > 10 * 1024 * 1024) {
-            alert('File too large. Please use an image under 10MB.');
+        if (file.size > 200 * 1024 * 1024) {
+            alert('File too large. Please use an image under 200MB.');
             return;
         }
 
@@ -377,6 +390,15 @@
         // Result
         const resultUrl = URL.createObjectURL(resultBlob);
         document.getElementById('bgrResultImg').src = resultUrl;
+
+        // Inject cross-tool chain actions
+        if (window.ToolChain && resultBlob) {
+            const chainContainer = document.getElementById('bgrChainActions');
+            if (chainContainer) {
+                const baseName = originalFile.name.replace(/\.[^.]+$/, '');
+                ToolChain.inject(chainContainer, resultBlob, baseName + '_white_bg.png', 'background-remover');
+            }
+        }
     }
 
     // ===== Download =====
