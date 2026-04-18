@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="108" ry="108" fill="url(#bg)"/>
+  <!-- Inner shadow overlay -->
+  <rect width="512" height="512" rx="108" ry="108" fill="rgba(0,0,0,0.1)"/>
+  <!-- TB Text -->
+  <text x="256" y="290" font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="220" font-weight="800" fill="#ffffff" text-anchor="middle" dominant-baseline="central" letter-spacing="-8">TB</text>
+  <!-- India flag accent bar -->
+  <rect x="128" y="400" width="85" height="12" rx="6" fill="#FF9933"/>
+  <rect x="213" y="400" width="86" height="12" rx="6" fill="#FFFFFF"/>
+  <rect x="299" y="400" width="85" height="12" rx="6" fill="#138808"/>
+</svg>

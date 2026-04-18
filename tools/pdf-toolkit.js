@@ -37,6 +37,7 @@
 
     // ===== Feature Definitions =====
     const FEATURES = [
+        { id: 'playground', icon: '🎪', title: 'PDF Playground',    desc: 'The power tool — upload multiple PDFs, cherry-pick pages from any file, drag to reorder, rotate & merge into one custom PDF', color: '#8b5cf6, #a855f7' },
         { id: 'merge',      icon: '📎', title: 'Merge PDFs',        desc: 'Combine multiple PDFs into one single file',             color: '#f093fb, #f5576c' },
         { id: 'split',      icon: '✂️', title: 'Split PDF',         desc: 'Split a PDF into separate pages or custom ranges',       color: '#4facfe, #00f2fe' },
         { id: 'compress',   icon: '📦', title: 'Compress PDF',      desc: 'Reduce PDF file size — pick a target size or level',     color: '#f6d365, #fda085' },
@@ -49,7 +50,6 @@
         { id: 'pagenums',   icon: '🔢', title: 'Add Page Numbers',  desc: 'Add page numbers to every page in your PDF',             color: '#0ba360, #3cba92' },
         { id: 'watermark',  icon: '💧', title: 'Add Watermark',     desc: 'Add text watermark across all pages of your PDF',        color: '#6a11cb, #2575fc' },
         { id: 'protect',    icon: '🔒', title: 'Protect PDF',       desc: 'Add password protection to your PDF file',               color: '#e53e3e, #e85d5d' },
-        { id: 'playground', icon: '🎪', title: 'PDF Playground',    desc: 'Upload multiple PDFs, pick pages, reorder, rotate & merge — all in one go', color: '#ff6b6b, #feca57' },
     ];
 
     // ===== Register Tool =====

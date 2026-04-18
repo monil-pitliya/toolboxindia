@@ -1018,6 +1018,39 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 14px;
+    margin-bottom: 48px;
+    padding-bottom: 8px;
+}
+
+/* PDF Playground — highlighted as the power tool */
+.pdftk-feature-card[data-feature="playground"] {
+    grid-column: 1 / -1;
+    border: 2px solid #8b5cf6;
+    background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(168,85,247,0.06));
+    position: relative;
+}
+.pdftk-feature-card[data-feature="playground"]::before {
+    content: '⭐ MOST POPULAR';
+    position: absolute;
+    top: -1px;
+    right: 16px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 3px 10px 4px;
+    border-radius: 0 0 8px 8px;
+}
+.pdftk-feature-card[data-feature="playground"]:hover {
+    border-color: #a855f7;
+    box-shadow: 0 8px 32px rgba(139,92,246,0.3);
+}
+.pdftk-feature-card[data-feature="playground"] .pdftk-feature-info strong {
+    color: #a78bfa;
+}
+.pdftk-feature-card[data-feature="playground"] .pdftk-feature-info span {
+    color: var(--text-secondary);
 }
 
 .pdftk-feature-card {
