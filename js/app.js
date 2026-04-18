@@ -265,13 +265,13 @@ const NavHighlighter = {
 
 // ===== Tool SEO (Dynamic Meta Tags per Tool) =====
 const ToolSEO = {
-    BASE_URL: 'https://toolboxindia.com',
+    BASE_URL: 'https://monil-pitliya.github.io/toolboxindia',
 
     // Homepage SEO (stored for restoration)
     homeSEO: {
         title: 'ToolBox India 🇮🇳 — Free Online Tools | 100% Private',
         description: 'Free online tools that run 100% in your browser. Compress images, merge PDFs, generate QR codes and more. Your files never leave your device.',
-        canonical: 'https://toolboxindia.com/',
+        canonical: 'https://monil-pitliya.github.io/toolboxindia/',
         ogTitle: 'ToolBox India — Free Online Tools | 100% Private, No Upload',
         ogDescription: 'Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge PDFs, generate QR codes. Your files NEVER leave your device.',
     },
@@ -513,7 +513,7 @@ const ToolSEO = {
             'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'INR' },
             'isAccessibleForFree': true,
             'browserRequirements': 'Requires a modern browser with JavaScript enabled',
-            'creator': { '@type': 'Organization', 'name': 'ToolBox India', 'url': 'https://toolboxindia.com' },
+            'creator': { '@type': 'Organization', 'name': 'ToolBox India', 'url': 'https://monil-pitliya.github.io/toolboxindia' },
         };
 
         // Add FAQ if present

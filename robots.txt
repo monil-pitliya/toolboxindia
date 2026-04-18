@@ -1,11 +1,11 @@
 # robots.txt for ToolBox India
-# https://toolboxindia.com
+# https://monil-pitliya.github.io/toolboxindia
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://toolboxindia.com/sitemap.xml
+Sitemap: https://monil-pitliya.github.io/toolboxindia/sitemap.xml
 
 # Allow all major search engine crawlers
 User-agent: Googlebot
