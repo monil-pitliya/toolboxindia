@@ -151,6 +151,7 @@
                                 Convert Another
                             </button>
                         </div>
+                        <div id="w2pChainActions"></div>
                     </div>
                 </div>
             `;
@@ -222,6 +223,16 @@
 
             const startOver = document.getElementById('w2pStartOver');
             if (startOver) startOver.addEventListener('click', resetTool);
+
+            // ToolChain: consume a pending chained file (e.g. from another tool)
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'document.docx');
+                    setTimeout(() => handleDocxFile(file), 100);
+                }
+            }
         }, 100);
     }
 
@@ -1115,6 +1126,15 @@
             showSection('done');
             const infoEl = document.getElementById('w2pDoneInfo');
             if (infoEl) infoEl.textContent = `${pageUrls.length} page${pageUrls.length !== 1 ? 's' : ''} • ${ToolUtils.formatBytes(pdfBlob.size)}`;
+
+            // ToolChain: inject "Use this in another tool" action bar
+            if (window.ToolChain && pdfBlob) {
+                const name = (docxFile ? docxFile.name.replace(/\.docx$/i, '') : 'document') + '.pdf';
+                const chainContainer = document.getElementById('w2pChainActions');
+                if (chainContainer) {
+                    ToolChain.inject(chainContainer, pdfBlob, name, 'word-to-pdf');
+                }
+            }
 
         } catch (err) {
             console.error('Conversion failed:', err);

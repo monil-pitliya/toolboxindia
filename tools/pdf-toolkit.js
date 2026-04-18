@@ -34,6 +34,90 @@
     let playgroundSources = []; // [{name, bytes, doc, renderDoc, pageCount}]
     let playgroundPages = [];   // [{srcIndex, srcPage, selected, rotation, thumbnail}]
     let isWorking = false;
+    // ===== Smooth auto-scroll during drag (global tracking + rAF) =====
+    //
+    // Zone = top 25% and bottom 25% of viewport (dynamic, adapts to screen size)
+    // Speed = LINEAR ramp — fast the moment you enter, superfast at edge
+    // Mac Dock fix: bottom zone peaks at 80px from bottom so Dock doesn't steal focus
+    //
+    // Speed table (on a 900px-tall viewport, edgeZone = 225px):
+    //   Just entering zone:  ~30 px/frame  = ~1,800 px/sec  (already fast)
+    //   Halfway to edge:     ~75 px/frame  = ~4,500 px/sec  (very fast)
+    //   Near edge:           ~120 px/frame = ~7,200 px/sec  (superfast)
+    //
+    let _dragScrollRAF = null;
+    let _dragMouseY = -1;
+    let _isDragging = false;
+
+    // Global dragover — tracks cursor position everywhere, including empty areas
+    document.addEventListener('dragover', (e) => {
+        if (_isDragging) {
+            _dragMouseY = e.clientY;
+        }
+    });
+
+    function _dragScrollLoop() {
+        if (!_isDragging) { _dragScrollRAF = null; return; }
+
+        const minSpeed = 30;    // px/frame when just entering zone — already noticeable
+        const maxSpeed = 120;   // px/frame at peak — superfast
+        const dockBuffer = 80;  // Mac Dock safe-zone: max speed reached 80px above bottom
+        const viewH = window.innerHeight;
+        const edgeZone = Math.round(viewH * 0.25); // 1/4 of screen from each edge
+        const y = _dragMouseY;
+
+        if (y >= 0 && viewH > 0) {
+            // --- TOP zone: top 25% of screen ---
+            if (y < edgeZone) {
+                // ratio goes 0 (just entered) → 1 (at pixel 0)
+                const ratio = Math.max(0, Math.min(1, 1 - (y / edgeZone)));
+                const speed = minSpeed + (maxSpeed - minSpeed) * ratio;
+                window.scrollBy(0, -speed);
+            }
+            // --- BOTTOM zone: bottom 25% of screen ---
+            // Max speed reached at dockBuffer px from bottom so Mac Dock doesn't interfere
+            else if (y > viewH - edgeZone) {
+                const distFromBottom = viewH - y;
+                let ratio;
+                if (distFromBottom <= dockBuffer) {
+                    // Already past the dock-buffer threshold — stay at max speed
+                    ratio = 1;
+                } else {
+                    // Map from edgeZone → dockBuffer linearly
+                    ratio = Math.max(0, Math.min(1, 1 - ((distFromBottom - dockBuffer) / (edgeZone - dockBuffer))));
+                }
+                const speed = minSpeed + (maxSpeed - minSpeed) * ratio;
+                window.scrollBy(0, speed);
+            }
+        }
+
+        _dragScrollRAF = requestAnimationFrame(_dragScrollLoop);
+    }
+
+    function startDragAutoScroll() {
+        _isDragging = true;
+        _dragMouseY = -1;
+        if (!_dragScrollRAF) {
+            _dragScrollRAF = requestAnimationFrame(_dragScrollLoop);
+        }
+    }
+
+    function stopDragAutoScroll() {
+        _isDragging = false;
+        _dragMouseY = -1;
+        if (_dragScrollRAF) {
+            cancelAnimationFrame(_dragScrollRAF);
+            _dragScrollRAF = null;
+        }
+    }
+
+    // dragAutoScroll kept for backward compat in dragover handlers (now a no-op,
+    // position is tracked globally above)
+    function dragAutoScroll() {}
+
+    // Safety net: always stop if drag ends or drops anywhere
+    document.addEventListener('dragend', stopDragAutoScroll);
+    document.addEventListener('drop', stopDragAutoScroll);
 
     // ===== Feature Definitions =====
     const FEATURES = [
@@ -104,7 +188,7 @@
                                     <input type="file" id="pdftkFileInputMulti" accept="application/pdf" multiple style="display:none">
                                     <p class="drop-zone-info">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                        PDF files only &bull; Max 50MB &bull; 100% private
+                                        PDF files only &bull; Max 200MB &bull; 100% private
                                     </p>
                                 </div>
                             </div>
@@ -156,6 +240,27 @@
             initDropZone();
             initPreviewModal();
             document.getElementById('pdftkBackBtn')?.addEventListener('click', goBackToHub);
+
+            // Cross-tool chaining: if a file was passed from another tool, auto-load it
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'chained.pdf');
+                    const targetFeature = chained.feature || 'merge';
+                    // Show back banner
+                    ToolChain.injectBackBanner(document.getElementById('pdftkRoot'));
+                    setTimeout(() => {
+                        openFeature(targetFeature);
+                        if (targetFeature === 'merge') {
+                            handleMergePdfs([file]);
+                        } else if (targetFeature === 'playground') {
+                            handlePlaygroundPdfs([file]);
+                        } else {
+                            handleSinglePdf(file);
+                        }
+                    }, 100);
+                }
+            }
         },
 
         destroy() {
@@ -288,7 +393,7 @@
     // ===== Handle Single PDF =====
     async function handleSinglePdf(file) {
         if (isWorking) return;
-        if (file.size > 50 * 1024 * 1024) { alert('File too large. Max 50MB.'); return; }
+        if (file.size > 200 * 1024 * 1024) { alert('File too large. Max 200MB.'); return; }
         isWorking = true;
         loadedFileName = file.name;
         showWorkspaceSection('loading');
@@ -918,14 +1023,17 @@
                     draggedEl = thumb;
                     thumb.classList.add('i2p-dragging');
                     e.dataTransfer.effectAllowed = 'move';
+                    startDragAutoScroll();
                 });
                 thumb.addEventListener('dragend', () => {
                     thumb.classList.remove('i2p-dragging');
                     draggedEl = null;
+                    stopDragAutoScroll();
                     reorderPagesFromDOM();
                 });
                 thumb.addEventListener('dragover', (e) => {
                     e.preventDefault();
+                    dragAutoScroll(e);
                     if (!draggedEl || draggedEl === thumb) return;
                     const rect = thumb.getBoundingClientRect();
                     const mid = rect.left + rect.width / 2;
@@ -956,15 +1064,18 @@
             item.addEventListener('dragstart', (e) => {
                 dragEl = item; item.classList.add('i2p-dragging');
                 e.dataTransfer.effectAllowed = 'move';
+                startDragAutoScroll();
             });
             item.addEventListener('dragend', () => {
                 item.classList.remove('i2p-dragging'); dragEl = null;
+                stopDragAutoScroll();
                 const newOrder = Array.from(list.querySelectorAll('.pdftk-merge-item')).map(el => parseInt(el.dataset.index));
                 mergeFiles = newOrder.map(i => mergeFiles[i]);
                 buildMergeEditor();
             });
             item.addEventListener('dragover', (e) => {
                 e.preventDefault();
+                dragAutoScroll(e);
                 if (!dragEl || dragEl === item) return;
                 const rect = item.getBoundingClientRect();
                 const mid = rect.top + rect.height / 2;
@@ -1529,11 +1640,17 @@
                         Start Over
                     </button>
                 </div>
+                <div id="pdftkChainActions"></div>
             </div>
         `;
         showWorkspaceSection('done');
         document.getElementById('pdftkDownloadBtn')?.addEventListener('click', () => ToolUtils.downloadBlob(blob, fileName));
         document.getElementById('pdftkStartOver')?.addEventListener('click', () => { resetState(); openFeature(currentFeature); });
+
+        // Cross-tool chaining: show compatible tools for this output
+        if (window.ToolChain) {
+            ToolChain.inject(document.getElementById('pdftkChainActions'), blob, fileName, 'pdf-toolkit', currentFeature);
+        }
     }
 
     // ===== Parse Ranges =====
@@ -1696,7 +1813,7 @@
 
             for (let fi = 0; fi < files.length; fi++) {
                 const file = files[fi];
-                if (file.size > 50 * 1024 * 1024) { alert(`${file.name} exceeds 50MB limit. Skipping.`); continue; }
+                if (file.size > 200 * 1024 * 1024) { alert(`${file.name} exceeds 200MB limit. Skipping.`); continue; }
                 updateLoading(`Reading file ${fi + 1} of ${files.length}...`, file.name);
                 const bytes = await file.arrayBuffer();
                 const doc = await pdfLib.PDFDocument.load(bytes, { ignoreEncryption: true });
@@ -1731,7 +1848,7 @@
             await ensureLibraries({ pdfjs: true });
             for (let fi = 0; fi < files.length; fi++) {
                 const file = files[fi];
-                if (file.size > 50 * 1024 * 1024) { alert(`${file.name} exceeds 50MB limit. Skipping.`); continue; }
+                if (file.size > 200 * 1024 * 1024) { alert(`${file.name} exceeds 200MB limit. Skipping.`); continue; }
                 updateLoading(`Reading file ${fi + 1} of ${files.length}...`, file.name);
                 const bytes = await file.arrayBuffer();
                 const doc = await pdfLib.PDFDocument.load(bytes, { ignoreEncryption: true });
@@ -1920,10 +2037,12 @@
                 draggedEl = card;
                 card.classList.add('pg-dragging');
                 e.dataTransfer.effectAllowed = 'move';
+                startDragAutoScroll();
             });
             card.addEventListener('dragend', () => {
                 card.classList.remove('pg-dragging');
                 draggedEl = null;
+                stopDragAutoScroll();
                 // Rebuild playgroundPages from DOM order
                 const newOrder = [];
                 grid.querySelectorAll('.pg-page-card').forEach(el => {
@@ -1938,6 +2057,7 @@
             });
             card.addEventListener('dragover', (e) => {
                 e.preventDefault();
+                dragAutoScroll(e);
                 if (!draggedEl || draggedEl === card) return;
                 const rect = card.getBoundingClientRect();
                 const mid = rect.left + rect.width / 2;

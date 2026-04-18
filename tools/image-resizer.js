@@ -277,6 +277,7 @@
                                                 📦 Download All (ZIP)
                                             </button>
                                         </div>
+                                        <div id="irChainActions"></div>
                                     </div>
                                 </div>
 
@@ -294,6 +295,16 @@
             setupUpload();
             setupControls();
             renderPresets();
+
+            // Cross-tool chaining: consume pending file from another tool
+            if (window.ToolChain && ToolChain.hasPending()) {
+                const chained = ToolChain.consumePending();
+                if (chained && chained.blob) {
+                    ToolChain.injectBackBanner(document.getElementById('toolContent'));
+                    const file = ToolChain.blobToFile(chained.blob, chained.name || 'image.jpg');
+                    setTimeout(() => handleFiles([file]), 100);
+                }
+            }
         },
 
         destroy() {
@@ -855,6 +866,15 @@
         const downloadAllBtn = document.getElementById('irDownloadAllBtn');
         if (downloadAllBtn) {
             downloadAllBtn.style.display = files.length > 1 ? '' : 'none';
+        }
+
+        // Cross-tool chaining: inject "Use this in another tool" action bar
+        if (window.ToolChain && resizedResults.length > 0) {
+            const r2 = resizedResults[activeIndex || 0];
+            const chainContainer = document.getElementById('irChainActions');
+            if (chainContainer && r2.blob) {
+                ToolChain.inject(chainContainer, r2.blob, r2.name, 'image-resizer');
+            }
         }
     }
 
