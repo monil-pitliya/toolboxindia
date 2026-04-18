@@ -1,6 +1,6 @@
-// Google Analytics 4 — Replace GA_MEASUREMENT_ID with your actual ID
-// Get your ID from: https://analytics.google.com
-window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with your GA4 ID
+// Google Analytics 4 — Free Toolbox India
+// Measurement ID: G-9YQNC1HGZJ
+window.GA_MEASUREMENT_ID = 'G-9YQNC1HGZJ';
 
 // Load GA4
 (function() {
@@ -53,4 +53,4 @@ window.trackShare = function(platform, toolId) {
     }
 };
 
-console.log('[ToolBox India] Analytics loaded. Remember to replace GA_MEASUREMENT_ID!');
+console.log('[Free Toolbox] Google Analytics (GA4) active — Tracking ID: G-9YQNC1HGZJ');
