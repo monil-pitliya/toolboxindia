@@ -1177,7 +1177,7 @@
         showDone(bytes, 'merged.pdf', `${mergeFiles.length} files merged → ${merged.getPageCount()} pages • ${ToolUtils.formatBytes(bytes.byteLength)}`);
     }
 
-    // === Split ===
+    // === Split ==
     async function doSplit() {
         const mode = document.querySelector('#pdftkSplitMode .i2p-option.active')?.dataset.value || 'all';
         updateLoading('Splitting PDF...', 'Preparing pages');
