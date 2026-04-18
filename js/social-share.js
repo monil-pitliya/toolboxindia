@@ -1,7 +1,7 @@
 // Social Sharing Module for ToolBox India
 window.SocialShare = {
     getShareData(toolId) {
-        const baseUrl = 'https://monil-pitliya.github.io/toolboxindia';
+        const baseUrl = 'https://freetoolbox.co.in';
         const toolNames = {
             'image-compressor': 'Image Compressor',
             'image-resizer': 'Image Resizer',

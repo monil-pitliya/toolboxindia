@@ -282,13 +282,13 @@ const NavHighlighter = {
 
 // ===== Tool SEO (Dynamic Meta Tags per Tool) =====
 const ToolSEO = {
-    BASE_URL: 'https://monil-pitliya.github.io/toolboxindia',
+    BASE_URL: 'https://freetoolbox.co.in',
 
     // Homepage SEO (stored for restoration)
     homeSEO: {
         title: 'ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private',
         description: "India's #1 free online toolbox — compress images up to 90%, remove backgrounds with AI, merge & edit PDFs, convert Word/PPT to PDF, generate UPI QR codes, calculate SIP returns & income tax FY 2025-26. 100% browser-based, your files never leave your device. No signup required.",
-        canonical: 'https://monil-pitliya.github.io/toolboxindia/',
+        canonical: 'https://freetoolbox.co.in/',
         ogTitle: 'ToolBox India — 11+ Free Online Tools | 100% Private, No Upload Needed',
         ogDescription: 'Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge & edit PDFs, generate UPI QR codes, calculate income tax & SIP returns. Your files NEVER leave your device.',
     },
@@ -530,7 +530,7 @@ const ToolSEO = {
             'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'INR' },
             'isAccessibleForFree': true,
             'browserRequirements': 'Requires a modern browser with JavaScript enabled',
-            'creator': { '@type': 'Organization', 'name': 'ToolBox India', 'url': 'https://monil-pitliya.github.io/toolboxindia' },
+            'creator': { '@type': 'Organization', 'name': 'ToolBox India', 'url': 'https://freetoolbox.co.in' },
         };
 
         // Add FAQ if present

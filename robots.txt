@@ -1,5 +1,5 @@
 # robots.txt for ToolBox India
-# https://monil-pitliya.github.io/toolboxindia
+# https://freetoolbox.co.in
 # Last updated: 2026-04-13
 
 # Allow all search engine crawlers full access
@@ -41,7 +41,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemap location
-Sitemap: https://monil-pitliya.github.io/toolboxindia/sitemap.xml
+Sitemap: https://freetoolbox.co.in/sitemap.xml
 
 # Host directive
-Host: https://monil-pitliya.github.io
+Host: https://freetoolbox.co.in

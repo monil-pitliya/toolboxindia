@@ -4,32 +4,32 @@
 
     <!-- ===== HOMEPAGE ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/</loc>
+        <loc>https://freetoolbox.co.in/</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://monil-pitliya.github.io/toolboxindia/"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolbox.co.in/"/>
     </url>
 
     <!-- ===== IMAGE TOOLS ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/image-compressor.html</loc>
+        <loc>https://freetoolbox.co.in/pages/image-compressor.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/pages/image-compressor.html"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/pages/image-compressor.html"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/pages/image-compressor.html"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/pages/image-compressor.html"/>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/image-resizer.html</loc>
+        <loc>https://freetoolbox.co.in/pages/image-resizer.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/background-remover.html</loc>
+        <loc>https://freetoolbox.co.in/pages/background-remover.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -37,35 +37,35 @@
 
     <!-- ===== PDF TOOLS (Main) ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit.html"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/pages/pdf-toolkit.html"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/pages/pdf-toolkit.html"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/pages/pdf-toolkit.html"/>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-editor.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-editor.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/pages/pdf-editor.html"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/pages/pdf-editor.html"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/pages/pdf-editor.html"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/pages/pdf-editor.html"/>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/word-to-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/word-to-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/ppt-to-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/ppt-to-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/image-to-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/image-to-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -73,79 +73,79 @@
 
     <!-- ===== PDF TOOLKIT SUB-TOOLS (13 Individual Pages) ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/merge-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/merge-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/split-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/split-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/compress-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/compress-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/pdf-to-word.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/pdf-to-word.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/pdf-to-images.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/pdf-to-images.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/extract-pages.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/extract-pages.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/delete-pages.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/delete-pages.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/rotate-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/rotate-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/reorder-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/reorder-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/add-page-numbers.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/add-page-numbers.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/add-watermark.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/add-watermark.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/protect-pdf.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/protect-pdf.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit/pdf-playground.html</loc>
+        <loc>https://freetoolbox.co.in/pages/pdf-toolkit/pdf-playground.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -153,15 +153,15 @@
 
     <!-- ===== CALCULATORS ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/tax-calculator.html</loc>
+        <loc>https://freetoolbox.co.in/pages/tax-calculator.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/pages/tax-calculator.html"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/pages/tax-calculator.html"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/pages/tax-calculator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/pages/tax-calculator.html"/>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/sip-calculator.html</loc>
+        <loc>https://freetoolbox.co.in/pages/sip-calculator.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -169,95 +169,95 @@
 
     <!-- ===== UTILITY TOOLS ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/qr-code.html</loc>
+        <loc>https://freetoolbox.co.in/pages/qr-code.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/pages/qr-code.html"/>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/pages/qr-code.html"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/pages/qr-code.html"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/pages/qr-code.html"/>
     </url>
 
     <!-- ===== KEYWORD-VARIANT LANDING PAGES (14 Pages) ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/compress-image-to-20kb.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/compress-image-to-20kb.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/compress-image-to-100kb.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/compress-image-to-100kb.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/compress-image-for-whatsapp.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/compress-image-for-whatsapp.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/compress-pdf-to-200kb.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/compress-pdf-to-200kb.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/merge-pdf-online.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/merge-pdf-online.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/pdf-to-jpg-converter.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/pdf-to-jpg-converter.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/pdf-editor-free-online.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/pdf-editor-free-online.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/upi-qr-code-generator.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/upi-qr-code-generator.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/wifi-qr-code-generator.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/wifi-qr-code-generator.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/passport-photo-background-remover.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/passport-photo-background-remover.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/remove-background-from-photo.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/remove-background-from-photo.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/instagram-image-resizer.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/instagram-image-resizer.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/income-tax-calculator-2025-26.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/income-tax-calculator-2025-26.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/pages/keywords/sip-calculator-india.html</loc>
+        <loc>https://freetoolbox.co.in/pages/keywords/sip-calculator-india.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -265,43 +265,43 @@
 
     <!-- ===== BLOG (6 Articles + Index) ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/</loc>
+        <loc>https://freetoolbox.co.in/blog/</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/compress-images-whatsapp.html</loc>
+        <loc>https://freetoolbox.co.in/blog/compress-images-whatsapp.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/income-tax-old-vs-new-regime.html</loc>
+        <loc>https://freetoolbox.co.in/blog/income-tax-old-vs-new-regime.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/best-free-pdf-editor-india.html</loc>
+        <loc>https://freetoolbox.co.in/blog/best-free-pdf-editor-india.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/resize-images-for-social-media.html</loc>
+        <loc>https://freetoolbox.co.in/blog/resize-images-for-social-media.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/how-to-compress-pdf-for-government-forms.html</loc>
+        <loc>https://freetoolbox.co.in/blog/how-to-compress-pdf-for-government-forms.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/blog/upi-qr-code-for-business.html</loc>
+        <loc>https://freetoolbox.co.in/blog/upi-qr-code-for-business.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -309,39 +309,39 @@
 
     <!-- ===== HINDI PAGES ===== -->
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/</loc>
+        <loc>https://freetoolbox.co.in/hi/</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/"/>
-        <xhtml:link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/"/>
+        <xhtml:link rel="alternate" hreflang="hi-in" href="https://freetoolbox.co.in/hi/"/>
+        <xhtml:link rel="alternate" hreflang="en-in" href="https://freetoolbox.co.in/"/>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/pages/image-compressor.html</loc>
+        <loc>https://freetoolbox.co.in/hi/pages/image-compressor.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/pages/pdf-toolkit.html</loc>
+        <loc>https://freetoolbox.co.in/hi/pages/pdf-toolkit.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/pages/tax-calculator.html</loc>
+        <loc>https://freetoolbox.co.in/hi/pages/tax-calculator.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/pages/qr-code.html</loc>
+        <loc>https://freetoolbox.co.in/hi/pages/qr-code.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://monil-pitliya.github.io/toolboxindia/hi/pages/pdf-editor.html</loc>
+        <loc>https://freetoolbox.co.in/hi/pages/pdf-editor.html</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
