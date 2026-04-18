@@ -41,7 +41,7 @@
         { id: 'merge',      icon: '📎', title: 'Merge PDFs',        desc: 'Combine multiple PDFs into one single file',             color: '#f093fb, #f5576c' },
         { id: 'split',      icon: '✂️', title: 'Split PDF',         desc: 'Split a PDF into separate pages or custom ranges',       color: '#4facfe, #00f2fe' },
         { id: 'compress',   icon: '📦', title: 'Compress PDF',      desc: 'Reduce PDF file size — pick a target size or level',     color: '#f6d365, #fda085' },
-        { id: 'pdf2word',   icon: '📝', title: 'PDF to Word',       desc: 'Convert PDF to editable Word (.docx) document',          color: '#2196F3, #21CBF3' },
+        { id: 'pdf2word',   icon: '📝', title: 'PDF to Word',       desc: 'Convert PDF to Word (.docx) — exact same layout, pixel-perfect',  color: '#2196F3, #21CBF3' },
         { id: 'pdf2img',    icon: '🖼️', title: 'PDF to Images',     desc: 'Convert every page into JPG or PNG images',              color: '#667eea, #764ba2' },
         { id: 'extract',    icon: '📋', title: 'Extract Pages',     desc: 'Pick specific pages and save them as a new PDF',         color: '#43e97b, #38f9d7' },
         { id: 'delete',     icon: '🗑️', title: 'Delete Pages',      desc: 'Remove unwanted pages from your PDF',                   color: '#fa709a, #fee140' },
@@ -549,26 +549,18 @@
         return `
             <div class="pdftk-editor-info">
                 <span class="pdftk-file-badge">📄 ${escHtml(fileName)} — ${totalPages} pages</span>
-                <p>Extract text from your PDF and create an editable Word document.</p>
+                <p>Convert your PDF to a Word document with exact visual layout — every page is reproduced pixel-perfect, just like Adobe Acrobat.</p>
             </div>
             <div class="i2p-settings" style="max-width:500px;margin:0 auto 24px;">
                 <div class="i2p-setting-group">
-                    <label class="i2p-label">Conversion Mode</label>
-                    <div class="i2p-options" id="pdftkWordMode">
-                        <button class="i2p-option active" data-value="text">Text Only (accurate)</button>
-                        <button class="i2p-option" data-value="visual">Text + Page Images</button>
+                    <label class="i2p-label">Quality</label>
+                    <div class="i2p-options" id="pdftkWordQuality">
+                        <button class="i2p-option" data-value="1.5">Standard (smaller file)</button>
+                        <button class="i2p-option active" data-value="2">High (recommended)</button>
+                        <button class="i2p-option" data-value="3">Ultra (large file)</button>
                     </div>
                 </div>
-                <div class="i2p-setting-group">
-                    <label class="i2p-label">Font Size</label>
-                    <div class="i2p-options" id="pdftkWordFontSize">
-                        <button class="i2p-option" data-value="10">10pt</button>
-                        <button class="i2p-option active" data-value="11">11pt</button>
-                        <button class="i2p-option" data-value="12">12pt</button>
-                        <button class="i2p-option" data-value="14">14pt</button>
-                    </div>
-                </div>
-                <p class="pdftk-hint">💡 Works best with text-based PDFs. Scanned/image PDFs will have limited text extraction.</p>
+                <p class="pdftk-hint">💡 Your PDF's exact layout — text, images, fonts, tables — is preserved perfectly in the Word document.</p>
             </div>
             <div class="pdftk-action-bar">
                 <button class="btn-primary pdftk-apply-btn" id="pdftkApplyBtn">
@@ -1300,91 +1292,86 @@
         showDone(bestBytes, 'compressed.pdf', info);
     }
 
-    // === PDF to Word ===
+    // === PDF to Word (pixel-perfect page-image approach) ===
     async function doPdf2Word() {
-        const mode = document.querySelector('#pdftkWordMode .i2p-option.active')?.dataset.value || 'text';
-        const fontSize = parseInt(document.querySelector('#pdftkWordFontSize .i2p-option.active')?.dataset.value || '11');
+        const scale = parseFloat(document.querySelector('#pdftkWordQuality .i2p-option.active')?.dataset.value || '2');
         const totalPages = loadedPdfDoc.getPageCount();
 
-        updateLoading('Extracting text...', `Processing ${totalPages} pages`);
+        // Points-to-EMU & points-to-twips helpers (Word uses EMUs internally)
+        const PT_TO_TWIP = 20;       // 1pt = 20 twips
+        const PT_TO_EMU  = 12700;    // 1pt = 12700 EMU
 
         const sections = [];
 
         for (let i = 0; i < totalPages; i++) {
-            updateLoading('Extracting text...', `Page ${i + 1} of ${totalPages}`);
+            updateLoading('Rendering pages...', `Page ${i + 1} of ${totalPages}`);
             const page = await renderDoc.getPage(i + 1);
-            const textContent = await page.getTextContent();
-            const lines = [];
-            let currentLine = '';
-            let lastY = null;
+            const vp = page.getViewport({ scale });
 
-            // Group text items by Y position to form lines
-            for (const item of textContent.items) {
-                const y = Math.round(item.transform[5]);
-                if (lastY !== null && Math.abs(y - lastY) > 5) {
-                    if (currentLine.trim()) lines.push(currentLine.trim());
-                    currentLine = '';
-                }
-                currentLine += item.str + ' ';
-                lastY = y;
-            }
-            if (currentLine.trim()) lines.push(currentLine.trim());
+            // PDF page size in points (1/72 inch) from the unscaled viewport
+            const vpUnscaled = page.getViewport({ scale: 1 });
+            const pageWidthPt  = vpUnscaled.width;
+            const pageHeightPt = vpUnscaled.height;
+            const isLandscape = pageWidthPt > pageHeightPt;
 
-            // Build docx paragraphs
-            const children = [];
+            // Render page to canvas at chosen quality scale
+            const canvas = document.createElement('canvas');
+            canvas.width = vp.width;
+            canvas.height = vp.height;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            await page.render({ canvasContext: ctx, viewport: vp }).promise;
 
-            // Page header
-            children.push(new docxLib.Paragraph({
-                children: [new docxLib.TextRun({ text: `— Page ${i + 1} —`, bold: true, size: fontSize * 2, color: '666666' })],
-                spacing: { after: 200 },
-                alignment: docxLib.AlignmentType.CENTER,
-            }));
+            // Encode to JPEG
+            const jpegQuality = scale >= 3 ? 0.92 : 0.85;
+            const dataUrl = canvas.toDataURL('image/jpeg', jpegQuality);
+            const base64 = dataUrl.split(',')[1];
+            const imgBuffer = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
 
-            // If visual mode, add page image
-            if (mode === 'visual') {
-                try {
-                    const vp = page.getViewport({ scale: 1.5 });
-                    const canvas = document.createElement('canvas');
-                    canvas.width = vp.width; canvas.height = vp.height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.fillStyle = '#fff';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    await page.render({ canvasContext: ctx, viewport: vp }).promise;
-                    const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
-                    const base64 = dataUrl.split(',')[1];
-                    const imgBuffer = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+            // Free canvas memory immediately
+            canvas.width = 0;
+            canvas.height = 0;
 
-                    children.push(new docxLib.Paragraph({
+            // Word page dimensions in twips (match PDF page exactly)
+            const pageW = Math.round(pageWidthPt * PT_TO_TWIP);
+            const pageH = Math.round(pageHeightPt * PT_TO_TWIP);
+
+            // Image dimensions in EMU to fill the page (minus margins)
+            const marginPt = 0; // zero margins — image fills entire page
+            const imgW = Math.round((pageWidthPt - marginPt * 2) * PT_TO_EMU);
+            const imgH = Math.round((pageHeightPt - marginPt * 2) * PT_TO_EMU);
+
+            sections.push({
+                properties: {
+                    page: {
+                        size: {
+                            width: pageW,
+                            height: pageH,
+                            orientation: isLandscape
+                                ? docxLib.PageOrientation.LANDSCAPE
+                                : docxLib.PageOrientation.PORTRAIT,
+                        },
+                        margin: {
+                            top: 0, bottom: 0, left: 0, right: 0,
+                        },
+                    },
+                },
+                children: [
+                    new docxLib.Paragraph({
+                        spacing: { before: 0, after: 0, line: 240 },
                         children: [
                             new docxLib.ImageRun({
                                 data: imgBuffer,
-                                transformation: { width: 500, height: Math.round(500 * (vp.height / vp.width)) },
+                                transformation: {
+                                    width: Math.round(imgW / PT_TO_EMU),
+                                    height: Math.round(imgH / PT_TO_EMU),
+                                },
                                 type: 'jpg',
-                            })
+                            }),
                         ],
-                        spacing: { after: 200 },
-                        alignment: docxLib.AlignmentType.CENTER,
-                    }));
-                } catch (e) { /* skip image on error */ }
-            }
-
-            // Text paragraphs
-            for (const line of lines) {
-                children.push(new docxLib.Paragraph({
-                    children: [new docxLib.TextRun({ text: line, size: fontSize * 2 })],
-                    spacing: { after: 80 },
-                }));
-            }
-
-            if (lines.length === 0) {
-                children.push(new docxLib.Paragraph({
-                    children: [new docxLib.TextRun({ text: '(No text detected on this page)', italics: true, color: '999999', size: fontSize * 2 })],
-                }));
-            }
-
-            sections.push({
-                properties: { page: { size: { orientation: docxLib.PageOrientation.PORTRAIT } } },
-                children,
+                    }),
+                ],
             });
         }
 

@@ -808,10 +808,45 @@ a.tool-card {
 @media (max-width: 768px) {
     .nav {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--border);
+        padding: 12px 16px;
+        gap: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .nav.mobile-open {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        font-size: 15px;
     }
 
     .mobile-menu-btn {
         display: flex;
+    }
+
+    /* Hamburger → X animation */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .hero-title {

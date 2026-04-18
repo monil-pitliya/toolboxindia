@@ -2934,6 +2934,43 @@
         padding: 14px 16px;
     }
 
+    /* PDF Playground hero card — prominent on mobile */
+    .pdftk-feature-card[data-feature="playground"] {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 20px 18px;
+        border: 2px solid #8b5cf6;
+        background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(168,85,247,0.08));
+        margin-bottom: 8px;
+    }
+
+    .pdftk-feature-card[data-feature="playground"] .pdftk-feature-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .pdftk-feature-card[data-feature="playground"] .pdftk-feature-info strong {
+        font-size: 17px;
+    }
+
+    .pdftk-feature-card[data-feature="playground"] .pdftk-feature-info span {
+        font-size: 13px;
+        line-height: 1.5;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .pdftk-feature-card[data-feature="playground"]::before {
+        position: static;
+        display: inline-block;
+        border-radius: 20px;
+        margin-bottom: 4px;
+        font-size: 0.65rem;
+        padding: 4px 12px;
+    }
+
     .pdftk-feature-icon {
         width: 40px;
         height: 40px;
