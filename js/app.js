@@ -80,7 +80,7 @@ const Router = {
 
         // Update URL
         history.pushState(null, '', 'index.html');
-        document.title = 'ToolBox India — Free Online Tools | 100% Private';
+        document.title = 'ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private';
 
         // Restore homepage SEO
         ToolSEO.restore();
@@ -269,11 +269,11 @@ const ToolSEO = {
 
     // Homepage SEO (stored for restoration)
     homeSEO: {
-        title: 'ToolBox India 🇮🇳 — Free Online Tools | 100% Private',
-        description: 'Free online tools that run 100% in your browser. Compress images, merge PDFs, generate QR codes and more. Your files never leave your device.',
+        title: 'ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private',
+        description: "India's #1 free online toolbox — compress images up to 90%, remove backgrounds with AI, merge & edit PDFs, convert Word/PPT to PDF, generate UPI QR codes, calculate SIP returns & income tax FY 2025-26. 100% browser-based, your files never leave your device. No signup required.",
         canonical: 'https://monil-pitliya.github.io/toolboxindia/',
-        ogTitle: 'ToolBox India — Free Online Tools | 100% Private, No Upload',
-        ogDescription: 'Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge PDFs, generate QR codes. Your files NEVER leave your device.',
+        ogTitle: 'ToolBox India — 11+ Free Online Tools | 100% Private, No Upload Needed',
+        ogDescription: 'Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge & edit PDFs, generate UPI QR codes, calculate income tax & SIP returns. Your files NEVER leave your device.',
     },
 
     // Per-tool SEO data — each key matches the tool ID

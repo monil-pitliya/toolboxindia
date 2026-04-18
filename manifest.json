@@ -1,0 +1,24 @@
+{
+  "name": "ToolBox India — Free Online Tools",
+  "short_name": "ToolBox India",
+  "description": "India's #1 free online toolbox. Compress images, edit PDFs, generate QR codes, calculate tax & SIP. 100% private, no upload needed.",
+  "start_url": "/toolboxindia/index.html",
+  "scope": "/toolboxindia/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["utilities", "productivity", "finance"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Image Compressor", "url": "/toolboxindia/?tool=image-compressor", "description": "Compress images up to 90%" },
+    { "name": "PDF Toolkit", "url": "/toolboxindia/?tool=pdf-toolkit", "description": "13 PDF tools in one" },
+    { "name": "Tax Calculator", "url": "/toolboxindia/?tool=tax-calculator", "description": "Income Tax FY 2025-26" },
+    { "name": "QR Code Generator", "url": "/toolboxindia/?tool=qr-code", "description": "UPI, WiFi, vCard QR codes" }
+  ]
+}

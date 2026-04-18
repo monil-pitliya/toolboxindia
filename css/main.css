@@ -652,22 +652,102 @@ body {
     50% { opacity: 0.4; }
 }
 
-/* ===== Footer ===== */
+/* ===== SEO Content Section ===== */
+.seo-content-section {
+    padding: 48px 0 40px;
+    border-top: 1px solid var(--border);
+}
+
+.seo-content-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.seo-tools-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.seo-tool-group h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.seo-tool-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seo-tool-group li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seo-tool-group a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.seo-tool-group a:hover {
+    text-decoration: underline;
+}
+
+.seo-about {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+}
+
+.seo-about h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.seo-about p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* ===== Footer (Enhanced with Internal Links) ===== */
 .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border);
-    padding: 24px;
+    padding: 40px 24px 24px;
     margin-top: auto;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.footer-container.footer-enhanced {
+    display: block;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.footer-col {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .footer-logo {
@@ -677,13 +757,51 @@ body {
 
 .footer-tagline {
     font-size: 13px;
-    color: var(--text-tertiary);
-    margin-top: 2px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    line-height: 1.6;
 }
 
 .footer-security {
     font-size: 12px;
     color: var(--text-tertiary);
+    margin-top: 8px;
+}
+
+.footer-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-link {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 3px 0;
+    transition: color var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+/* ===== Tool card as <a> tag fix ===== */
+a.tool-card {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ===== Responsive ===== */
@@ -725,9 +843,17 @@ body {
         flex-direction: column;
     }
 
-    .footer-container {
-        flex-direction: column;
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .footer-bottom {
         text-align: center;
+    }
+
+    .seo-tools-list {
+        grid-template-columns: 1fr;
     }
 
     .trust-grid {
@@ -786,3 +912,46 @@ body {
 .view.active {
     animation: fadeInUp 0.3s ease-out;
 }
+
+/* ===== Social Share Bar ===== */
+.share-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    margin: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.share-label {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.share-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.share-whatsapp:hover { background: #25D366; color: white; border-color: #25D366; }
+.share-twitter:hover { background: #1DA1F2; color: white; border-color: #1DA1F2; }
+.share-telegram:hover { background: #0088cc; color: white; border-color: #0088cc; }
+.share-linkedin:hover { background: #0077B5; color: white; border-color: #0077B5; }
+.share-copy:hover { background: var(--accent); color: white; border-color: var(--accent); }

@@ -1,26 +1,47 @@
 # robots.txt for ToolBox India
 # https://monil-pitliya.github.io/toolboxindia
+# Last updated: 2026-04-13
 
+# Allow all search engine crawlers full access
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://monil-pitliya.github.io/toolboxindia/sitemap.xml
-
-# Allow all major search engine crawlers
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-
-User-agent: Yandex
-Allow: /
-Crawl-delay: 3
+Allow: /pages/
+Allow: /pages/pdf-toolkit/
+Allow: /pages/keywords/
+Allow: /blog/
+Allow: /hi/
+Allow: /hi/pages/
+Allow: /index.html
 
 # Disallow dev/hidden directories
 Disallow: /.git/
 Disallow: /.github/
+Disallow: /.idea/
 Disallow: /api/
+Disallow: /sw.js
+
+# Googlebot — primary search engine for India
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# Sitemap location
+Sitemap: https://monil-pitliya.github.io/toolboxindia/sitemap.xml
+
+# Host directive
+Host: https://monil-pitliya.github.io

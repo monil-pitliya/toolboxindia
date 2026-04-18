@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en-IN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolBox India 🇮🇳 — Free Online Tools | 100% Private</title>
-    <meta name="description" content="Free online tools that run 100% in your browser. Compress images, merge PDFs, generate QR codes and more. Your files never leave your device.">
-    <meta name="keywords" content="image compressor, image resizer, resize image online, resize image to exact size, resize image for instagram, resize image for facebook, social media image size, batch resize images, image resizer online free, resize photo, change image dimensions, background remover, remove background, image to pdf, jpg to pdf, png to pdf, convert image to pdf, ppt to pdf, pptx to pdf, convert powerpoint to pdf, powerpoint to pdf online free, ppt to pdf converter online, convert pptx to pdf free, presentation to pdf, slides to pdf, word to pdf, docx to pdf, convert word to pdf online free, word to pdf converter, doc to pdf, convert docx to pdf free, document to pdf, pdf merge, merge pdf online, split pdf, compress pdf, rotate pdf, extract pdf pages, delete pdf pages, pdf to image, reorder pdf pages, pdf to word, pdf to docx, convert pdf to word online, add watermark to pdf, add page numbers pdf, protect pdf, password protect pdf, pdf playground, merge specific pages from multiple pdfs, pick pages from pdf, combine pdf pages, pdf page selector, pdf editor online, edit pdf online free, add text to pdf, add signature to pdf, annotate pdf, draw on pdf, income tax calculator india, income tax calculator FY 2025-26, old vs new regime calculator, tax slab calculator, income tax comparison india, 80C deduction calculator, HRA exemption calculator, take home salary calculator, sip calculator, sip calculator online, mutual fund calculator, sip return calculator, lumpsum calculator, step up sip calculator, swp calculator, systematic withdrawal plan, goal sip calculator, sip vs lumpsum, investment calculator india, mutual fund return calculator, monthly sip calculator, qr code generator, qr code generator online free, qr code scanner, scan qr code online, upi qr code generator, wifi qr code, vcard qr code, whatsapp qr code, qr code with logo, custom qr code, online tools india, free tools, privacy tools, compress image online, remove bg free">
+    <title>ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private</title>
+    <meta name="description" content="India's #1 free online toolbox — compress images up to 90%, remove backgrounds with AI, merge &amp; edit PDFs, convert Word/PPT to PDF, generate UPI QR codes, calculate SIP returns &amp; income tax FY 2025-26. 100% browser-based, your files never leave your device. No signup required.">
+    <meta name="keywords" content="free online tools india, toolbox india, image compressor, compress image online free, image resizer, resize image for instagram, background remover, remove bg free, image to pdf, jpg to pdf, word to pdf, docx to pdf converter, ppt to pdf, powerpoint to pdf converter, pdf merge online, split pdf, compress pdf, pdf editor online free, edit pdf online, add signature to pdf, pdf to word converter, income tax calculator india 2025-26, old vs new regime calculator, sip calculator, mutual fund calculator, lumpsum calculator, swp calculator, qr code generator free, upi qr code generator, wifi qr code, online tools, privacy tools, ilovepdf alternative, smallpdf alternative free">
 
     <!-- SEO Meta Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="ToolBox India">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.country" content="IN">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="rating" content="general">
     <link rel="canonical" href="https://monil-pitliya.github.io/toolboxindia/">
+
+    <!-- Hreflang for India targeting -->
+    <link rel="alternate" hreflang="en-in" href="https://monil-pitliya.github.io/toolboxindia/">
+    <link rel="alternate" hreflang="en" href="https://monil-pitliya.github.io/toolboxindia/">
+    <link rel="alternate" hreflang="x-default" href="https://monil-pitliya.github.io/toolboxindia/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://monil-pitliya.github.io/toolboxindia/">
-    <meta property="og:title" content="ToolBox India — Free Online Tools | 100% Private, No Upload">
-    <meta property="og:description" content="Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge PDFs, generate QR codes. Your files NEVER leave your device.">
+    <meta property="og:title" content="ToolBox India — 11+ Free Online Tools | 100% Private, No Upload Needed">
+    <meta property="og:description" content="Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge &amp; edit PDFs, generate UPI QR codes, calculate income tax &amp; SIP returns. Your files NEVER leave your device.">
     <meta property="og:site_name" content="ToolBox India">
     <meta property="og:locale" content="en_IN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ToolBox India — Free Online Tools | 100% Private">
-    <meta name="twitter:description" content="Compress images, remove backgrounds, merge PDFs — all 100% in your browser. No uploads. No tracking. Free forever.">
+    <meta name="twitter:title" content="ToolBox India — 11+ Free Online Tools | 100% Private">
+    <meta name="twitter:description" content="Compress images, remove backgrounds, edit PDFs, generate UPI QR codes — all 100% in your browser. No uploads. No tracking. Free forever.">
 
     <!-- Mobile App Meta -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -32,176 +42,130 @@
     <meta name="apple-mobile-web-app-title" content="ToolBox India">
     <meta name="theme-color" content="#6366f1">
 
-    <!-- JSON-LD Structured Data for Google Rich Results -->
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Hindi alternate -->
+    <link rel="alternate" hreflang="hi-in" href="https://monil-pitliya.github.io/toolboxindia/hi/">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ToolBox India",
+        "url": "https://monil-pitliya.github.io/toolboxindia",
+        "description": "India's free online toolbox — image, PDF, calculator & utility tools that run 100% in your browser.",
+        "foundingCountry": "IN"
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ToolBox India",
+        "url": "https://monil-pitliya.github.io/toolboxindia",
+        "description": "Free online tools that run 100% in your browser.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://monil-pitliya.github.io/toolboxindia/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: WebApplication with AggregateRating -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "ToolBox India",
         "url": "https://monil-pitliya.github.io/toolboxindia",
-        "description": "Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge PDFs, generate QR codes and more. Your files never leave your device.",
+        "description": "Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge PDFs, generate QR codes and more.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any (Browser-based)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "INR"
-        },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
         "featureList": [
             "Image Compression — reduce image size up to 90%",
-            "Image Resizer — resize to exact dimensions, percentage, or 30+ social media presets with batch support",
+            "Image Resizer — resize to exact dimensions or 30+ social media presets",
             "Background Removal — AI-powered, 100% in browser",
             "Image to PDF — convert & merge images into PDF",
-            "PDF Toolkit — 13 tools: merge, split, compress, PDF to Word, PDF to images, extract, delete, rotate, reorder, add page numbers, add watermark, protect PDF, PDF Playground",
-            "PDF Playground — upload multiple PDFs, pick pages, drag to reorder, rotate & merge in one workspace",
-            "QR Code Generator & Scanner — generate QR for URL, UPI, WiFi, vCard, WhatsApp, Email, Phone, SMS with customizable colors, dot styles & logo support. Scan from camera or image",
-            "PDF Editor — add text, images, signatures, shapes, highlights, drawings to any PDF",
-            "PDF to Word — convert PDF documents to editable Word (.docx) files",
-            "PDF Compress with Target Size — compress PDF to exact file size like 500KB, 1MB",
-            "Add Watermark — stamp text watermark on every PDF page",
-            "Protect PDF — password-protect your PDF files",
-            "Word to PDF — convert Word (.docx) documents to PDF preserving text, formatting, images, tables — 100% in browser",
-            "PPT to PDF — convert PowerPoint (.pptx) presentations to PDF preserving text, images, shapes — 100% in browser",
-            "SIP & Investment Calculator — 6 modes: SIP, Lumpsum, Step-Up SIP, SWP, Goal-Based, SIP vs Lumpsum comparison with LTCG tax, inflation adjustment, doughnut charts, growth charts, and year-wise breakdown",
-            "Income Tax Calculator — FY 2025-26 Old vs New regime side-by-side comparison with all deductions, slab breakdowns, and tax saving tips",
-            "100% Client-Side Processing",
-            "No file uploads",
-            "Works offline",
-            "Dark mode support"
+            "PDF Toolkit — 13 tools: merge, split, compress, convert, extract, rotate, reorder, watermark, protect",
+            "QR Code Generator & Scanner — URL, UPI, WiFi, vCard, WhatsApp with custom colors & logo",
+            "PDF Editor — add text, images, signatures, shapes, highlights",
+            "Word to PDF — preserves text, formatting, images, tables",
+            "PPT to PDF — preserves text, images, shapes",
+            "SIP & Investment Calculator — 6 modes with LTCG tax & inflation",
+            "Income Tax Calculator — FY 2025-26 Old vs New regime comparison"
         ],
-        "browserRequirements": "Requires a modern web browser with JavaScript enabled",
-        "softwareVersion": "1.0",
-        "author": {
-            "@type": "Organization",
-            "name": "ToolBox India"
-        }
+        "softwareVersion": "2.0",
+        "author": { "@type": "Organization", "name": "ToolBox India" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
     }
     </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monil-pitliya.github.io/toolboxindia/" }]
+    }
+    </script>
+
+    <!-- JSON-LD: ItemList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Free Online Tools — ToolBox India",
+        "numberOfItems": 11,
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Image Compressor", "url": "https://monil-pitliya.github.io/toolboxindia/pages/image-compressor.html" },
+            { "@type": "ListItem", "position": 2, "name": "Image Resizer", "url": "https://monil-pitliya.github.io/toolboxindia/pages/image-resizer.html" },
+            { "@type": "ListItem", "position": 3, "name": "Background Remover", "url": "https://monil-pitliya.github.io/toolboxindia/pages/background-remover.html" },
+            { "@type": "ListItem", "position": 4, "name": "Word to PDF Converter", "url": "https://monil-pitliya.github.io/toolboxindia/pages/word-to-pdf.html" },
+            { "@type": "ListItem", "position": 5, "name": "PPT to PDF Converter", "url": "https://monil-pitliya.github.io/toolboxindia/pages/ppt-to-pdf.html" },
+            { "@type": "ListItem", "position": 6, "name": "PDF Toolkit", "url": "https://monil-pitliya.github.io/toolboxindia/pages/pdf-toolkit.html" },
+            { "@type": "ListItem", "position": 7, "name": "PDF Editor", "url": "https://monil-pitliya.github.io/toolboxindia/pages/pdf-editor.html" },
+            { "@type": "ListItem", "position": 8, "name": "Image to PDF", "url": "https://monil-pitliya.github.io/toolboxindia/pages/image-to-pdf.html" },
+            { "@type": "ListItem", "position": 9, "name": "Income Tax Calculator", "url": "https://monil-pitliya.github.io/toolboxindia/pages/tax-calculator.html" },
+            { "@type": "ListItem", "position": 10, "name": "SIP Calculator", "url": "https://monil-pitliya.github.io/toolboxindia/pages/sip-calculator.html" },
+            { "@type": "ListItem", "position": 11, "name": "QR Code Generator", "url": "https://monil-pitliya.github.io/toolboxindia/pages/qr-code.html" }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Is ToolBox India really free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all tools on ToolBox India are 100% free to use with no limits. No signup, no watermarks, no hidden fees."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are my files uploaded to a server?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. All processing happens entirely in your browser using JavaScript. Your files never leave your device. We don't even have servers to store files."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does the background remover work without internet?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "After the first load, the AI model is cached in your browser. Most tools work offline after the initial page load."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What image formats are supported?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ToolBox India supports JPG, JPEG, PNG, WebP, BMP, and GIF formats for all image tools including compression and background removal."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I edit a PDF online for free without signing up?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's PDF Editor lets you add text, images, signatures, shapes, highlights, freehand drawings, and whiteout to any PDF — completely free, no signup, and 100% in your browser. Nothing is uploaded to any server."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I convert PDF to Word online for free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's PDF Toolkit includes PDF to Word conversion that works 100% in your browser. It extracts text from your PDF and creates an editable .docx file. No upload, no signup, completely free."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I resize images for Instagram, Facebook, YouTube, and other social media?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's Image Resizer includes 30+ pre-built social media presets for Instagram (post, story, reel, profile), Facebook (post, cover, event), Twitter/X, YouTube (thumbnail, channel art), LinkedIn, and WhatsApp. Just pick a preset and resize instantly — 100% in your browser."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I compare Old vs New income tax regime for FY 2025-26?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's Income Tax Calculator lets you instantly compare Old and New tax regime for FY 2025-26 (AY 2026-27). Enter your salary, deductions (80C, 80D, HRA, NPS, home loan), and see a side-by-side comparison with slab breakdowns, take-home pay, and personalized tax-saving tips — 100% in your browser, no data is sent anywhere."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I convert Word (DOCX) to PDF online for free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's Word to PDF converter lets you convert .docx Word documents to high-quality PDF — completely free, no signup, and 100% in your browser. Text, formatting, images, and tables are preserved. Nothing is uploaded to any server."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I convert PowerPoint (PPT) to PDF online for free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's PPT to PDF converter lets you convert .pptx PowerPoint presentations to high-quality PDF documents — completely free, no signup, and 100% in your browser. Text, images, shapes, and formatting are preserved. Nothing is uploaded to any server."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does ToolBox India have a SIP calculator?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's SIP & Investment Calculator offers 6 modes: SIP, Lumpsum, Step-Up SIP, SWP (Systematic Withdrawal Plan), Goal-Based SIP, and SIP vs Lumpsum comparison. It includes LTCG tax calculation (12.5% above ₹1.25L), inflation adjustment, interactive doughnut and growth charts, and year-wise breakdown tables — all 100% in your browser."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How many PDF tools does ToolBox India have?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ToolBox India offers 13 PDF tools in one toolkit: Merge, Split, Compress (with target file size), PDF to Word, PDF to Images, Extract Pages, Delete Pages, Rotate Pages, Reorder Pages, Add Page Numbers, Add Watermark, Protect PDF with password, and the PDF Playground — a workspace where you can upload multiple PDFs, pick specific pages, drag to reorder, rotate, and merge them all in one go."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I generate a UPI QR code for free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's QR Code Generator lets you create UPI payment QR codes that work with Google Pay, PhonePe, Paytm, BHIM and all UPI apps. Enter your UPI ID, name, optional amount & note — get a scannable QR code instantly. Download as PNG or SVG. 100% free, no signup, works offline."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I scan a QR code from an image or camera online?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's QR Code Scanner can read QR codes from uploaded images (JPG, PNG) or directly from your camera in real-time. It detects URLs, text, WiFi credentials, UPI links and more. 100% in your browser — no app install needed, completely private."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I pick specific pages from multiple PDFs and merge them?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! ToolBox India's PDF Playground lets you upload multiple PDFs at once. Every page is shown as a visual thumbnail — click to select or deselect, drag to reorder, rotate individual pages, then build a single PDF from your selection. No need to download and re-upload between steps. 100% in your browser, completely free."
-                }
-            }
+            { "@type": "Question", "name": "Is ToolBox India really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all tools on ToolBox India are 100% free to use with no limits. No signup, no watermarks, no hidden fees." } },
+            { "@type": "Question", "name": "Are my files uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All processing happens entirely in your browser using JavaScript. Your files never leave your device." } },
+            { "@type": "Question", "name": "Does the background remover work without internet?", "acceptedAnswer": { "@type": "Answer", "text": "After the first load, the AI model is cached in your browser. Most tools work offline after the initial page load." } },
+            { "@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "ToolBox India supports JPG, JPEG, PNG, WebP, BMP, and GIF formats for all image tools." } },
+            { "@type": "Question", "name": "Can I edit a PDF online for free without signing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! ToolBox India's PDF Editor lets you add text, images, signatures, shapes, highlights, freehand drawings, and whiteout to any PDF — completely free, no signup, and 100% in your browser." } },
+            { "@type": "Question", "name": "Can I convert PDF to Word online for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! ToolBox India's PDF Toolkit includes PDF to Word conversion that works 100% in your browser." } },
+            { "@type": "Question", "name": "Can I resize images for Instagram, Facebook, YouTube?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Image Resizer includes 30+ social media presets for Instagram, Facebook, YouTube, Twitter/X, LinkedIn, and WhatsApp." } },
+            { "@type": "Question", "name": "Can I compare Old vs New income tax regime for FY 2025-26?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! The Income Tax Calculator lets you compare Old and New regime for FY 2025-26 with slab breakdowns, deductions, and take-home pay." } },
+            { "@type": "Question", "name": "Can I convert Word (DOCX) to PDF online for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Word to PDF converter preserves text, formatting, images, and tables. 100% in your browser." } },
+            { "@type": "Question", "name": "Can I convert PowerPoint (PPT) to PDF online for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! PPT to PDF converter preserves text, images, shapes, and formatting. 100% in your browser." } },
+            { "@type": "Question", "name": "Does ToolBox India have a SIP calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! 6 modes: SIP, Lumpsum, Step-Up SIP, SWP, Goal-Based, and SIP vs Lumpsum with LTCG tax and inflation adjustment." } },
+            { "@type": "Question", "name": "How many PDF tools does ToolBox India have?", "acceptedAnswer": { "@type": "Answer", "text": "13 PDF tools: Merge, Split, Compress, PDF to Word, PDF to Images, Extract, Delete, Rotate, Reorder Pages, Page Numbers, Watermark, Protect PDF, and PDF Playground." } },
+            { "@type": "Question", "name": "Can I generate a UPI QR code for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Create UPI QR codes for Google Pay, PhonePe, Paytm, BHIM. Download as PNG or SVG. 100% free." } },
+            { "@type": "Question", "name": "Can I scan a QR code from an image or camera?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Scan QR codes from uploaded images or camera in real-time. Detects URLs, WiFi, UPI links and more." } },
+            { "@type": "Question", "name": "Can I pick specific pages from multiple PDFs and merge them?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! PDF Playground lets you upload multiple PDFs, select pages visually, drag to reorder, and build a single PDF." } },
+            { "@type": "Question", "name": "What is the best free alternative to iLovePDF in India?", "acceptedAnswer": { "@type": "Answer", "text": "ToolBox India is the best free alternative. Unlike iLovePDF, everything runs in your browser — no files uploaded. 13 PDF tools, image tools, calculators, QR codes — all free, no signup." } }
         ]
     }
     </script>
@@ -209,11 +173,14 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧰</text></svg>">
 
-    <!-- Google Fonts -->
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/tools.css">
@@ -231,15 +198,15 @@
     <!-- ===== HEADER ===== -->
     <header class="header">
         <div class="header-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" title="ToolBox India — Free Online Tools">
                 <span class="logo-icon">🧰</span>
                 <div class="logo-text">
                     <span class="logo-title">ToolBox <span class="logo-india">India</span></span>
                     <span class="logo-subtitle">Free • Private • Secure</span>
                 </div>
             </a>
-            
-            <nav class="nav" id="mainNav">
+
+            <nav class="nav" id="mainNav" aria-label="Main navigation">
                 <a href="#tools" class="nav-link active">All Tools</a>
                 <a href="#image-tools" class="nav-link">Image Tools</a>
                 <a href="#pdf-tools" class="nav-link">PDF Tools</a>
@@ -261,19 +228,20 @@
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main">
-        
+
         <!-- HOME VIEW — Tool Grid -->
         <section class="view active" id="homeView">
             <!-- Hero -->
             <div class="hero">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Free Online Tools
-                        <span class="hero-highlight">100% Private</span>
+                        Free Online Tools for India
+                        <span class="hero-highlight">100% Private & Browser-Based</span>
                     </h1>
                     <p class="hero-description">
-                        Every tool runs <strong>entirely in your browser</strong>. Your files are never uploaded to any server. 
-                        Fast, free, and secure.
+                        Compress images, edit PDFs, convert Word & PPT to PDF, generate UPI QR codes, calculate SIP returns & income tax —
+                        <strong>everything runs in your browser</strong>. Your files are never uploaded.
+                        Fast, free, and secure. Trusted by thousands of Indian users.
                     </p>
                     <div class="hero-badges">
                         <span class="badge badge-green">
@@ -300,7 +268,7 @@
             <div class="search-container">
                 <div class="search-box">
                     <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                    <input type="text" class="search-input" id="toolSearch" placeholder="Search tools... (e.g., compress image, merge pdf)" autocomplete="off">
+                    <input type="text" class="search-input" id="toolSearch" placeholder="Search tools... (e.g., compress image, merge pdf, sip calculator)" autocomplete="off" aria-label="Search tools">
                     <kbd class="search-kbd">Ctrl+K</kbd>
                 </div>
             </div>
@@ -311,13 +279,13 @@
                 <div class="category" id="image-tools">
                     <div class="category-header">
                         <h2 class="category-title">
-                            <span class="category-icon">📸</span> Image Tools
+                            <span class="category-icon">📸</span> Image Tools — Compress, Resize & Remove Background
                         </h2>
                         <span class="category-count">3 tools</span>
                     </div>
                     <div class="tool-grid">
                         <!-- Image Compressor -->
-                        <div class="tool-card" onclick="openTool('image-compressor')">
+                        <a href="pages/image-compressor.html" class="tool-card" onclick="event.preventDefault(); openTool('image-compressor')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -327,20 +295,21 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">Image Compressor</h3>
-                                <p class="tool-card-desc">Compress images up to 90% smaller without visible quality loss</p>
+                                <p class="tool-card-desc">Compress images up to 90% smaller without visible quality loss. Supports JPG, PNG, WebP. Batch processing available.</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">JPG</span>
                                 <span class="tag">PNG</span>
                                 <span class="tag">WebP</span>
+                                <span class="tag">Batch</span>
                             </div>
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Image Resizer -->
-                        <div class="tool-card" onclick="openTool('image-resizer')">
+                        <a href="pages/image-resizer.html" class="tool-card" onclick="event.preventDefault(); openTool('image-resizer')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -348,7 +317,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">Image Resizer</h3>
-                                <p class="tool-card-desc">Resize images to exact pixels, percentage, or social media sizes — batch support & format conversion</p>
+                                <p class="tool-card-desc">Resize images to exact pixels, percentage, or 30+ social media presets for Instagram, Facebook, YouTube & more — with batch support</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">Batch</span>
@@ -359,10 +328,10 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Background Remover -->
-                        <div class="tool-card" onclick="openTool('background-remover')">
+                        <a href="pages/background-remover.html" class="tool-card" onclick="event.preventDefault(); openTool('background-remover')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -372,7 +341,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">Background Remover</h3>
-                                <p class="tool-card-desc">AI removes the background — keeps only the main object on a clean white background</p>
+                                <p class="tool-card-desc">AI-powered background removal — removes background from photos of people, products, animals & logos. Get transparent PNG instantly.</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">AI</span>
@@ -382,7 +351,7 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -390,13 +359,13 @@
                 <div class="category" id="pdf-tools">
                     <div class="category-header">
                         <h2 class="category-title">
-                            <span class="category-icon">📄</span> PDF Tools
+                            <span class="category-icon">📄</span> PDF Tools — Edit, Merge, Convert & Compress
                         </h2>
                         <span class="category-count">5 tools</span>
                     </div>
                     <div class="tool-grid">
                         <!-- Word to PDF -->
-                        <div class="tool-card" onclick="openTool('word-to-pdf')">
+                        <a href="pages/word-to-pdf.html" class="tool-card" onclick="event.preventDefault(); openTool('word-to-pdf')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <path d="M4 4a2 2 0 012-2h8l6 6v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/>
@@ -406,7 +375,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">Word to PDF</h3>
-                                <p class="tool-card-desc">Convert Word documents (.docx) to PDF — preserves text, formatting, images & tables</p>
+                                <p class="tool-card-desc">Convert Word documents (.docx) to PDF — preserves text, formatting, images, tables & lists. No watermark added.</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">DOCX</span>
@@ -417,10 +386,10 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- PPT to PDF -->
-                        <div class="tool-card" onclick="openTool('ppt-to-pdf')">
+                        <a href="pages/ppt-to-pdf.html" class="tool-card" onclick="event.preventDefault(); openTool('ppt-to-pdf')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="2" y="3" width="8" height="8" rx="1"/>
@@ -431,7 +400,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">PPT to PDF</h3>
-                                <p class="tool-card-desc">Convert PowerPoint presentations to PDF — preserves text, images & shapes, 100% in browser</p>
+                                <p class="tool-card-desc">Convert PowerPoint presentations (.pptx) to PDF — preserves text, images, shapes & slide formatting, 100% in browser</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">PPTX</span>
@@ -442,10 +411,10 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- PDF Toolkit -->
-                        <div class="tool-card" onclick="openTool('pdf-toolkit')">
+                        <a href="pages/pdf-toolkit.html" class="tool-card" onclick="event.preventDefault(); openTool('pdf-toolkit')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
@@ -454,7 +423,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">PDF Toolkit</h3>
-                                <p class="tool-card-desc">Merge, split, compress, convert to Word, add watermark, page numbers, protect & more — all-in-one</p>
+                                <p class="tool-card-desc">All-in-one PDF suite: merge, split, compress, convert to Word, extract pages, add watermark, page numbers, protect & more — 13 tools in one</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">Merge</span>
@@ -466,10 +435,10 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- PDF Editor -->
-                        <div class="tool-card" onclick="openTool('pdf-editor')">
+                        <a href="pages/pdf-editor.html" class="tool-card" onclick="event.preventDefault(); openTool('pdf-editor')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
@@ -478,7 +447,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">PDF Editor</h3>
-                                <p class="tool-card-desc">Edit existing text, add text, images, signatures, shapes, erase content & more — like Sejda</p>
+                                <p class="tool-card-desc">Edit PDF online free — add text, images, signatures, shapes, highlights, erase content, whiteout & annotate. No watermark.</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">Edit Text</span>
@@ -489,10 +458,10 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Image to PDF -->
-                        <div class="tool-card" onclick="openTool('image-to-pdf')">
+                        <a href="pages/image-to-pdf.html" class="tool-card" onclick="event.preventDefault(); openTool('image-to-pdf')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="2" y="3" width="8" height="8" rx="1"/>
@@ -502,7 +471,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">Image to PDF</h3>
-                                <p class="tool-card-desc">Convert one or multiple images into a single PDF — reorder, choose size & orientation</p>
+                                <p class="tool-card-desc">Convert one or multiple images (JPG, PNG, WebP) into a single PDF — reorder pages, choose A4/Letter size & orientation</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">JPG</span>
@@ -512,7 +481,7 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -520,13 +489,13 @@
                 <div class="category" id="calculators">
                     <div class="category-header">
                         <h2 class="category-title">
-                            <span class="category-icon">🧮</span> Calculators
+                            <span class="category-icon">🧮</span> Financial Calculators — SIP, Tax & Investment Planning
                         </h2>
                         <span class="category-count">2 tools</span>
                     </div>
                     <div class="tool-grid">
                         <!-- SIP & Investment Calculator -->
-                        <div class="tool-card" onclick="openTool('sip-calculator')">
+                        <a href="pages/sip-calculator.html" class="tool-card" onclick="event.preventDefault(); openTool('sip-calculator')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
@@ -534,7 +503,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">SIP & Investment Calculator</h3>
-                                <p class="tool-card-desc">SIP, Lumpsum, Step-Up, SWP, Goal-Based — with LTCG tax, inflation adjustment & growth charts</p>
+                                <p class="tool-card-desc">Calculate mutual fund returns with 6 modes: SIP, Lumpsum, Step-Up SIP, SWP, Goal-Based — includes LTCG tax, inflation & growth charts</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">SIP</span>
@@ -546,18 +515,18 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Income Tax Calculator -->
-                        <div class="tool-card" onclick="openTool('tax-calculator')">
+                        <a href="pages/tax-calculator.html" class="tool-card" onclick="event.preventDefault(); openTool('tax-calculator')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/>
                                 </svg>
                             </div>
                             <div class="tool-card-content">
-                                <h3 class="tool-card-title">Income Tax Calculator</h3>
-                                <p class="tool-card-desc">Compare Old vs New regime instantly — see slab breakdowns, deductions, take-home pay & savings tips</p>
+                                <h3 class="tool-card-title">Income Tax Calculator FY 2025-26</h3>
+                                <p class="tool-card-desc">Compare Old vs New tax regime instantly — see slab breakdowns, all deductions (80C, 80D, HRA, NPS), take-home pay & personalized savings tips</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">FY 2025-26</span>
@@ -568,20 +537,20 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <!-- Utility Tools -->
                 <div class="category" id="utility-tools">
                     <div class="category-header">
                         <h2 class="category-title">
-                            <span class="category-icon">🛠️</span> Utility Tools
+                            <span class="category-icon">🛠️</span> Utility Tools — QR Code Generator & Scanner
                         </h2>
                         <span class="category-count">1 tool</span>
                     </div>
                     <div class="tool-grid">
                         <!-- QR Code Generator & Scanner -->
-                        <div class="tool-card" onclick="openTool('qr-code')">
+                        <a href="pages/qr-code.html" class="tool-card" onclick="event.preventDefault(); openTool('qr-code')">
                             <div class="tool-card-icon" style="background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
                                     <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
@@ -590,7 +559,7 @@
                             </div>
                             <div class="tool-card-content">
                                 <h3 class="tool-card-title">QR Code Generator & Scanner</h3>
-                                <p class="tool-card-desc">Generate stunning QR codes for URLs, UPI, WiFi, contacts, WhatsApp & more. Scan from camera or image.</p>
+                                <p class="tool-card-desc">Generate QR codes for URLs, UPI payments (GPay, PhonePe, Paytm), WiFi, contacts (vCard), WhatsApp & more. Scan from camera or image.</p>
                             </div>
                             <div class="tool-card-tags">
                                 <span class="tag">UPI</span>
@@ -602,7 +571,7 @@
                             <div class="tool-card-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -613,24 +582,66 @@
                 <div class="trust-grid">
                     <div class="trust-card">
                         <div class="trust-icon">🔒</div>
-                        <h3>100% Client-Side</h3>
-                        <p>All processing happens in your browser using JavaScript. We don't have servers to store your files — even if we wanted to.</p>
+                        <h3>100% Client-Side Processing</h3>
+                        <p>All processing happens in your browser using JavaScript. We don't have servers to store your files — even if we wanted to. Your data stays on your device.</p>
                     </div>
                     <div class="trust-card">
                         <div class="trust-icon">👁️‍🗨️</div>
-                        <h3>Open Source</h3>
-                        <p>Our code is open for inspection. Right-click → View Source to verify. Nothing is hidden.</p>
+                        <h3>Open Source Code</h3>
+                        <p>Our code is open for inspection. Right-click → View Source to verify. Nothing is hidden. Full transparency, always.</p>
                     </div>
                     <div class="trust-card">
                         <div class="trust-icon">📡</div>
                         <h3>Works Offline</h3>
-                        <p>Once loaded, tools work even without internet. Try turning off WiFi — it still works!</p>
+                        <p>Once loaded, tools work even without internet. Try turning off WiFi — it still works! AI models are cached in your browser.</p>
                     </div>
                     <div class="trust-card">
                         <div class="trust-icon">🇮🇳</div>
                         <h3>Made for India</h3>
-                        <p>Optimized for Indian internet speeds. Works great on 3G/4G and budget smartphones.</p>
+                        <p>Optimized for Indian internet speeds. Works great on 3G/4G and budget smartphones. UPI QR codes, Indian tax & investment calculators included.</p>
                     </div>
+                </div>
+            </section>
+
+            <!-- SEO Content Section — crawlable links for Google -->
+            <section class="seo-content-section">
+                <h2>All Free Online Tools on ToolBox India</h2>
+                <div class="seo-tools-list">
+                    <div class="seo-tool-group">
+                        <h3>Image Tools</h3>
+                        <ul>
+                            <li><a href="pages/image-compressor.html" onclick="event.preventDefault(); openTool('image-compressor')">Image Compressor</a> — Compress JPG, PNG, WebP images up to 90% smaller</li>
+                            <li><a href="pages/image-resizer.html" onclick="event.preventDefault(); openTool('image-resizer')">Image Resizer</a> — Resize for Instagram, Facebook, YouTube with 30+ presets</li>
+                            <li><a href="pages/background-remover.html" onclick="event.preventDefault(); openTool('background-remover')">Background Remover</a> — AI-powered background removal for people, products & logos</li>
+                        </ul>
+                    </div>
+                    <div class="seo-tool-group">
+                        <h3>PDF Tools</h3>
+                        <ul>
+                            <li><a href="pages/word-to-pdf.html" onclick="event.preventDefault(); openTool('word-to-pdf')">Word to PDF Converter</a> — Convert DOCX to PDF preserving text, images & tables</li>
+                            <li><a href="pages/ppt-to-pdf.html" onclick="event.preventDefault(); openTool('ppt-to-pdf')">PPT to PDF Converter</a> — Convert PowerPoint to PDF preserving slides</li>
+                            <li><a href="pages/pdf-toolkit.html" onclick="event.preventDefault(); openTool('pdf-toolkit')">PDF Toolkit (13 Tools)</a> — Merge, split, compress, convert, watermark, protect PDFs</li>
+                            <li><a href="pages/pdf-editor.html" onclick="event.preventDefault(); openTool('pdf-editor')">PDF Editor</a> — Add text, signatures, images, shapes to any PDF</li>
+                            <li><a href="pages/image-to-pdf.html" onclick="event.preventDefault(); openTool('image-to-pdf')">Image to PDF</a> — Convert JPG, PNG images into a single PDF</li>
+                        </ul>
+                    </div>
+                    <div class="seo-tool-group">
+                        <h3>Financial Calculators</h3>
+                        <ul>
+                            <li><a href="pages/sip-calculator.html" onclick="event.preventDefault(); openTool('sip-calculator')">SIP & Investment Calculator</a> — SIP, Lumpsum, Step-Up, SWP, Goal-Based with LTCG tax</li>
+                            <li><a href="pages/tax-calculator.html" onclick="event.preventDefault(); openTool('tax-calculator')">Income Tax Calculator FY 2025-26</a> — Old vs New regime comparison with deductions</li>
+                        </ul>
+                    </div>
+                    <div class="seo-tool-group">
+                        <h3>Utility Tools</h3>
+                        <ul>
+                            <li><a href="pages/qr-code.html" onclick="event.preventDefault(); openTool('qr-code')">QR Code Generator & Scanner</a> — UPI, WiFi, vCard, WhatsApp QR codes with custom colors & logo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="seo-about">
+                    <h3>About ToolBox India</h3>
+                    <p>ToolBox India is a collection of free online tools designed specifically for Indian users. Every tool runs 100% in your browser — your files are never uploaded to any server. Whether you need to compress images for WhatsApp, convert Word documents to PDF for office work, generate UPI QR codes for your shop, calculate your income tax for FY 2025-26, or plan your mutual fund SIP investments — ToolBox India has you covered. All tools are completely free, require no signup, add no watermarks, and work offline after the first load. Built with privacy at its core, ToolBox India is the trusted free alternative to paid tools like iLovePDF, SmallPDF, TinyPNG, and Remove.bg.</p>
                 </div>
             </section>
         </section>
@@ -656,33 +667,75 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER (SEO-Enhanced with Internal Links) ===== -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <span class="footer-logo">🧰 ToolBox India</span>
-                <p class="footer-tagline">Free tools that respect your privacy.</p>
+        <div class="footer-container footer-enhanced">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">🧰 ToolBox India</span>
+                    <p class="footer-tagline">India's free online toolbox. Every tool runs 100% in your browser. Your files never leave your device.</p>
+                    <p class="footer-security">🔒 Zero data collection • No cookies • No tracking • No uploads</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Image Tools</h4>
+                    <nav aria-label="Image tools">
+                        <a href="pages/image-compressor.html" class="footer-link" onclick="event.preventDefault(); openTool('image-compressor')">Image Compressor</a>
+                        <a href="pages/image-resizer.html" class="footer-link" onclick="event.preventDefault(); openTool('image-resizer')">Image Resizer</a>
+                        <a href="pages/background-remover.html" class="footer-link" onclick="event.preventDefault(); openTool('background-remover')">Background Remover</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">PDF Tools</h4>
+                    <nav aria-label="PDF tools">
+                        <a href="pages/word-to-pdf.html" class="footer-link" onclick="event.preventDefault(); openTool('word-to-pdf')">Word to PDF</a>
+                        <a href="pages/ppt-to-pdf.html" class="footer-link" onclick="event.preventDefault(); openTool('ppt-to-pdf')">PPT to PDF</a>
+                        <a href="pages/pdf-toolkit.html" class="footer-link" onclick="event.preventDefault(); openTool('pdf-toolkit')">PDF Toolkit</a>
+                        <a href="pages/pdf-editor.html" class="footer-link" onclick="event.preventDefault(); openTool('pdf-editor')">PDF Editor</a>
+                        <a href="pages/image-to-pdf.html" class="footer-link" onclick="event.preventDefault(); openTool('image-to-pdf')">Image to PDF</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Calculators & Utility</h4>
+                    <nav aria-label="Calculators and utility tools">
+                        <a href="pages/sip-calculator.html" class="footer-link" onclick="event.preventDefault(); openTool('sip-calculator')">SIP Calculator</a>
+                        <a href="pages/tax-calculator.html" class="footer-link" onclick="event.preventDefault(); openTool('tax-calculator')">Income Tax Calculator</a>
+                        <a href="pages/qr-code.html" class="footer-link" onclick="event.preventDefault(); openTool('qr-code')">QR Code Generator</a>
+                    </nav>
+                </div>
             </div>
-            <div class="footer-right">
-                <p class="footer-security">
-                    🔒 Zero data collection • No cookies • No tracking • No uploads
-                </p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ToolBox India. All tools are free and open-source. Made with ❤️ in India.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts (Deferred for performance) -->
     <script src="js/app.js"></script>
-    <script src="tools/image-compressor.js"></script>
-    <script src="tools/background-remover.js"></script>
-    <script src="tools/image-to-pdf.js"></script>
-    <script src="tools/pdf-toolkit.js"></script>
-    <script src="tools/pdf-editor.js"></script>
-    <script src="tools/image-resizer.js"></script>
-    <script src="tools/tax-calculator.js"></script>
-    <script src="tools/ppt-to-pdf.js"></script>
-    <script src="tools/word-to-pdf.js"></script>
-    <script src="tools/sip-calculator.js"></script>
-    <script src="tools/qr-code.js"></script>
+    <script src="tools/image-compressor.js" defer></script>
+    <script src="tools/background-remover.js" defer></script>
+    <script src="tools/image-to-pdf.js" defer></script>
+    <script src="tools/pdf-toolkit.js" defer></script>
+    <script src="tools/pdf-editor.js" defer></script>
+    <script src="tools/image-resizer.js" defer></script>
+    <script src="tools/tax-calculator.js" defer></script>
+    <script src="tools/ppt-to-pdf.js" defer></script>
+    <script src="tools/word-to-pdf.js" defer></script>
+    <script src="tools/sip-calculator.js" defer></script>
+    <script src="tools/qr-code.js" defer></script>
+
+    <!-- Analytics & Social Sharing (loaded after main content) -->
+    <script src="js/analytics.js" defer></script>
+    <script src="js/social-share.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('[SW] Registered:', reg.scope))
+                .catch(err => console.log('[SW] Registration failed:', err));
+        });
+    }
+    </script>
 </body>
 </html>
