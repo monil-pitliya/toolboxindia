@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Background Remover Tool
+   Free Toolbox — Background Remover Tool
 
    Uses @imgly/background-removal (real AI / ONNX model)
    that ACTUALLY identifies the main object and removes

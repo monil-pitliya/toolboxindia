@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Image Compressor Tool
+   Free Toolbox — Image Compressor Tool
    100% Client-Side Image Compression
    
    TWO MODES:

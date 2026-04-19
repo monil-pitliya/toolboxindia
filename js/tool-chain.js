@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Cross-Tool Chaining
+   Free Toolbox — Cross-Tool Chaining
    
    After a tool produces output (PDF, image, etc.),
    show quick-action buttons to feed that output

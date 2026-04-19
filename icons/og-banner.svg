@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b"/>
+      <stop offset="50%" style="stop-color:#0f0f23"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4f46e5"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Accent line top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Toolbox icon (scaled) -->
+  <g transform="translate(80, 180) scale(0.5)">
+    <rect width="512" height="512" rx="108" ry="108" fill="url(#accent)" opacity="0.15"/>
+    <rect x="106" y="230" width="300" height="160" rx="18" ry="18" fill="url(#box)"/>
+    <rect x="96" y="210" width="320" height="50" rx="14" ry="14" fill="#fcd34d"/>
+    <rect x="196" y="160" width="120" height="60" rx="16" ry="16" fill="none" stroke="#fcd34d" stroke-width="18"/>
+    <rect x="196" y="210" width="120" height="30" fill="#fcd34d"/>
+    <rect x="238" y="222" width="36" height="30" rx="6" fill="#d97706"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="380" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#ffffff">Free Toolbox</text>
+
+  <!-- Subtitle -->
+  <text x="380" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#a5b4fc">Free Online Tools — 100% Private, Browser-Based</text>
+
+  <!-- Tool tags -->
+  <g transform="translate(380, 360)">
+    <rect x="0" y="0" width="180" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="90" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">Image Compressor</text>
+
+    <rect x="195" y="0" width="120" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="255" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">PDF Editor</text>
+
+    <rect x="330" y="0" width="150" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="405" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">QR Generator</text>
+
+    <rect x="495" y="0" width="170" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="580" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">Background Remover</text>
+
+    <rect x="0" y="46" width="140" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="70" y="70" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">PDF Toolkit</text>
+
+    <rect x="155" y="46" width="140" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="225" y="70" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">Tax Calculator</text>
+
+    <rect x="310" y="46" width="140" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="380" y="70" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">SIP Calculator</text>
+
+    <rect x="465" y="46" width="110" height="36" rx="18" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="520" y="70" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#818cf8" text-anchor="middle">11+ More</text>
+  </g>
+
+  <!-- India flag bar at bottom -->
+  <rect x="0" y="580" width="400" height="50" fill="#FF9933"/>
+  <rect x="400" y="580" width="400" height="50" fill="#FFFFFF"/>
+  <rect x="800" y="580" width="400" height="50" fill="#138808"/>
+
+  <!-- URL -->
+  <text x="600" y="555" font-family="system-ui, sans-serif" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle">freetoolbox.co.in</text>
+</svg>

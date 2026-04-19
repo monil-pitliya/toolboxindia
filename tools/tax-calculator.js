@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Income Tax Calculator
+   Free Toolbox — Income Tax Calculator
    FY 2025-26 (AY 2026-27)
 
    Features:

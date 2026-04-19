@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Core Application Logic
+   Free Toolbox — Core Application Logic
    Handles routing, theme, search, and tool registration
    ============================================= */
 
@@ -80,7 +80,7 @@ const Router = {
 
         // Update URL
         history.pushState(null, '', 'index.html');
-        document.title = 'ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private';
+        document.title = 'Free Toolbox — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private';
 
         // Restore homepage SEO
         ToolSEO.restore();
@@ -99,7 +99,7 @@ const Router = {
 
         // Set title
         document.getElementById('toolViewTitle').textContent = tool.title;
-        document.title = `${tool.title} — ToolBox India`;
+        document.title = `${tool.title} — Free Toolbox`;
 
         // Apply tool-specific SEO (meta, OG, canonical, JSON-LD)
         ToolSEO.apply(toolId);
@@ -286,100 +286,100 @@ const ToolSEO = {
 
     // Homepage SEO (stored for restoration)
     homeSEO: {
-        title: 'ToolBox India 🇮🇳 — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private',
+        title: 'Free Toolbox — Free Online Tools | Compress Images, Edit PDFs, Generate QR Codes | 100% Private',
         description: "India's #1 free online toolbox — compress images up to 90%, remove backgrounds with AI, merge & edit PDFs, convert Word/PPT to PDF, generate UPI QR codes, calculate SIP returns & income tax FY 2025-26. 100% browser-based, your files never leave your device. No signup required.",
         canonical: 'https://freetoolbox.co.in/',
-        ogTitle: 'ToolBox India — 11+ Free Online Tools | 100% Private, No Upload Needed',
+        ogTitle: 'Free Toolbox — 11+ Free Online Tools | 100% Private, No Upload Needed',
         ogDescription: 'Free online tools that run 100% in your browser. Compress images, remove backgrounds, merge & edit PDFs, generate UPI QR codes, calculate income tax & SIP returns. Your files NEVER leave your device.',
     },
 
     // Per-tool SEO data — each key matches the tool ID
     toolData: {
         'image-compressor': {
-            title: 'Image Compressor — Reduce Image Size Up to 90% | Free Online | ToolBox India',
+            title: 'Image Compressor — Reduce Image Size Up to 90% | Free Online | Free Toolbox',
             description: 'Compress JPG, PNG, WebP images up to 90% smaller without losing quality. 100% in your browser, no upload, no signup. Batch compress multiple images instantly — free forever.',
             keywords: 'image compressor, compress image online, reduce image size, jpg compressor, png compressor, image size reducer, compress photo online free, bulk image compressor',
             ogTitle: 'Free Image Compressor — Reduce Image Size Up to 90%',
             ogDescription: 'Compress JPG, PNG, WebP images instantly. No upload, no signup, 100% private. Reduce file size up to 90% without quality loss.',
             schemaType: 'WebApplication',
-            schemaName: 'Image Compressor — ToolBox India',
+            schemaName: 'Image Compressor — Free Toolbox',
             faq: [
-                { q: 'How much can I compress my images?', a: 'ToolBox India\'s Image Compressor can reduce file sizes by up to 90% while maintaining visual quality. You can adjust the compression level to find the perfect balance between size and quality.' },
+                { q: 'How much can I compress my images?', a: 'Free Toolbox\'s Image Compressor can reduce file sizes by up to 90% while maintaining visual quality. You can adjust the compression level to find the perfect balance between size and quality.' },
                 { q: 'Is my image uploaded to any server?', a: 'No! Everything runs 100% in your browser using JavaScript. Your images never leave your device. There are no servers, no uploads, no tracking.' },
                 { q: 'Can I compress multiple images at once?', a: 'Yes! You can drag and drop or select multiple images and compress them all in one batch. Each image is processed individually in your browser.' },
             ],
         },
         'image-resizer': {
-            title: 'Image Resizer — Resize Images for Instagram, Facebook, YouTube & More | Free Online | ToolBox India',
+            title: 'Image Resizer — Resize Images for Instagram, Facebook, YouTube & More | Free Online | Free Toolbox',
             description: 'Resize images to exact dimensions, percentage, or 30+ social media presets (Instagram, Facebook, YouTube, LinkedIn). Batch resize, maintain aspect ratio — 100% free, no upload.',
             keywords: 'image resizer, resize image online, resize image for instagram, resize image for facebook, social media image size, batch resize images, change image dimensions, resize photo online free',
             ogTitle: 'Free Image Resizer — 30+ Social Media Presets',
             ogDescription: 'Resize images for Instagram, Facebook, YouTube & more. 30+ presets, exact dimensions, batch resize — 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'Image Resizer — ToolBox India',
+            schemaName: 'Image Resizer — Free Toolbox',
             faq: [
-                { q: 'What social media presets are available?', a: 'ToolBox India\'s Image Resizer includes 30+ presets: Instagram (post, story, reel, profile), Facebook (post, cover, event), YouTube (thumbnail, channel art, banner), Twitter/X, LinkedIn, WhatsApp, and more.' },
+                { q: 'What social media presets are available?', a: 'Free Toolbox\'s Image Resizer includes 30+ presets: Instagram (post, story, reel, profile), Facebook (post, cover, event), YouTube (thumbnail, channel art, banner), Twitter/X, LinkedIn, WhatsApp, and more.' },
                 { q: 'Can I resize multiple images at once?', a: 'Yes! Batch resize is supported. Upload multiple images and resize them all to the same dimensions or preset in one go.' },
             ],
         },
         'background-remover': {
-            title: 'Background Remover — AI-Powered, 100% Free & Private | ToolBox India',
+            title: 'Background Remover — AI-Powered, 100% Free & Private | Free Toolbox',
             description: 'Remove background from images instantly using AI — 100% in your browser, no upload, no signup. Get transparent PNG output. Works on people, products, animals, logos.',
             keywords: 'background remover, remove background, remove bg online free, background eraser, transparent background, remove image background, ai background remover free, cut out background',
             ogTitle: 'Free AI Background Remover — 100% Private',
             ogDescription: 'Remove backgrounds from images instantly using AI. No upload, no signup. Get transparent PNG output — 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'Background Remover — ToolBox India',
+            schemaName: 'Background Remover — Free Toolbox',
             faq: [
-                { q: 'How does the AI background removal work?', a: 'ToolBox India uses an AI model that runs entirely in your browser. It detects the main subject (person, product, animal) and removes the background, giving you a clean transparent PNG.' },
+                { q: 'How does the AI background removal work?', a: 'Free Toolbox uses an AI model that runs entirely in your browser. It detects the main subject (person, product, animal) and removes the background, giving you a clean transparent PNG.' },
                 { q: 'Is my image sent to any server?', a: 'No. The AI model runs locally in your browser. Your images never leave your device — complete privacy guaranteed.' },
             ],
         },
         'image-to-pdf': {
-            title: 'Image to PDF Converter — Convert JPG/PNG to PDF Online Free | ToolBox India',
+            title: 'Image to PDF Converter — Convert JPG/PNG to PDF Online Free | Free Toolbox',
             description: 'Convert one or multiple images (JPG, PNG, WebP) into a single PDF. Reorder pages, choose A4/Letter size, landscape/portrait. 100% in your browser — free, no upload.',
             keywords: 'image to pdf, jpg to pdf, png to pdf, convert image to pdf, photo to pdf, multiple images to pdf, combine images to pdf, image to pdf converter online free',
             ogTitle: 'Free Image to PDF Converter — JPG, PNG to PDF',
             ogDescription: 'Convert images to PDF instantly. Merge multiple images, reorder, choose page size. 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'Image to PDF Converter — ToolBox India',
+            schemaName: 'Image to PDF Converter — Free Toolbox',
             faq: [
                 { q: 'Can I convert multiple images into one PDF?', a: 'Yes! Upload multiple JPG, PNG, or WebP images, drag to reorder them, choose page size (A4, Letter, Legal) and orientation (portrait/landscape), then download a single merged PDF.' },
             ],
         },
         'word-to-pdf': {
-            title: 'Word to PDF Converter — Convert DOCX to PDF Online Free | ToolBox India',
+            title: 'Word to PDF Converter — Convert DOCX to PDF Online Free | Free Toolbox',
             description: 'Convert Word documents (.docx) to high-quality PDF for free. Preserves text formatting, images, tables & lists. 100% in your browser — no upload, no signup, no watermark.',
             keywords: 'word to pdf, docx to pdf, convert word to pdf online free, word to pdf converter, doc to pdf, convert docx to pdf free, document to pdf, word document to pdf',
             ogTitle: 'Free Word to PDF Converter — DOCX to PDF',
             ogDescription: 'Convert Word (.docx) to PDF instantly. Text, images, tables preserved. No upload, no signup — 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'Word to PDF Converter — ToolBox India',
+            schemaName: 'Word to PDF Converter — Free Toolbox',
             faq: [
                 { q: 'Does it preserve formatting from my Word document?', a: 'Yes! Text formatting (bold, italic, fonts, colors), images, tables, lists (numbered & bulleted), headings, and page breaks are preserved in the PDF output.' },
                 { q: 'Is there a file size limit?', a: 'The converter handles typical Word documents up to 50MB. Since everything runs in your browser, the limit depends on your device\'s available memory.' },
             ],
         },
         'ppt-to-pdf': {
-            title: 'PPT to PDF Converter — Convert PowerPoint to PDF Online Free | ToolBox India',
+            title: 'PPT to PDF Converter — Convert PowerPoint to PDF Online Free | Free Toolbox',
             description: 'Convert PowerPoint presentations (.pptx) to PDF for free. Preserves text, images, shapes & formatting. 100% in your browser — no upload, no signup, no watermark.',
             keywords: 'ppt to pdf, pptx to pdf, convert powerpoint to pdf, powerpoint to pdf online free, ppt to pdf converter online, convert pptx to pdf free, presentation to pdf, slides to pdf',
             ogTitle: 'Free PPT to PDF Converter — PowerPoint to PDF',
             ogDescription: 'Convert PowerPoint (.pptx) to PDF instantly. Text, images, shapes preserved. No upload — 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'PPT to PDF Converter — ToolBox India',
+            schemaName: 'PPT to PDF Converter — Free Toolbox',
             faq: [
                 { q: 'Does it work with .ppt files?', a: 'The converter works best with .pptx files (PowerPoint 2007 and later format). Older .ppt files may need to be saved as .pptx first in PowerPoint or LibreOffice.' },
             ],
         },
         'pdf-toolkit': {
-            title: 'PDF Toolkit — 13 Free PDF Tools: Merge, Split, Compress, Convert & More | ToolBox India',
+            title: 'PDF Toolkit — 13 Free PDF Tools: Merge, Split, Compress, Convert & More | Free Toolbox',
             description: 'All-in-one PDF toolkit with 13 tools: Merge, Split, Compress, PDF to Word, PDF to Images, Extract Pages, Delete Pages, Rotate, Reorder, Page Numbers, Watermark, Protect & PDF Playground. 100% free, no upload.',
             keywords: 'pdf toolkit, merge pdf online, split pdf, compress pdf, pdf to word, pdf to image, extract pdf pages, delete pdf pages, rotate pdf, reorder pdf, add watermark pdf, add page numbers pdf, protect pdf, pdf playground, combine pages from multiple pdfs',
             ogTitle: 'Free PDF Toolkit — 13 Tools in One (Merge, Split, Compress & More)',
             ogDescription: '13 PDF tools in one: Merge, Split, Compress, Convert, Extract, Rotate, Reorder, Watermark, Protect & PDF Playground. 100% in your browser.',
             schemaType: 'WebApplication',
-            schemaName: 'PDF Toolkit — ToolBox India',
+            schemaName: 'PDF Toolkit — Free Toolbox',
             faq: [
                 { q: 'How many PDF tools does this include?', a: 'The toolkit includes 13 tools: Merge PDFs, Split PDF, Compress PDF (with target file size), PDF to Word, PDF to Images, Extract Pages, Delete Pages, Rotate Pages, Reorder Pages, Add Page Numbers, Add Watermark, Protect PDF with password, and PDF Playground.' },
                 { q: 'What is PDF Playground?', a: 'PDF Playground lets you upload multiple PDFs, see all pages as visual thumbnails, select/deselect pages, drag to reorder, rotate individual pages, and build a single PDF from your selection — all in one workspace without downloading between steps.' },
@@ -387,27 +387,27 @@ const ToolSEO = {
             ],
         },
         'pdf-editor': {
-            title: 'PDF Editor — Edit PDF Online Free, Add Text, Sign, Annotate | ToolBox India',
+            title: 'PDF Editor — Edit PDF Online Free, Add Text, Sign, Annotate | Free Toolbox',
             description: 'Edit PDFs online for free — add text, images, signatures, shapes, highlights, freehand drawings. Edit existing text, erase content, whiteout. 100% in your browser, no upload needed.',
             keywords: 'pdf editor online, edit pdf online free, add text to pdf, add signature to pdf, annotate pdf, sign pdf online, draw on pdf, pdf editor free no watermark, edit pdf text, whiteout pdf, erase pdf content',
             ogTitle: 'Free PDF Editor — Edit, Sign, Annotate PDFs Online',
             ogDescription: 'Edit PDFs online for free. Add text, signatures, images, shapes, highlights. Edit existing text, erase content. No upload — 100% private.',
             schemaType: 'WebApplication',
-            schemaName: 'PDF Editor — ToolBox India',
+            schemaName: 'PDF Editor — Free Toolbox',
             faq: [
-                { q: 'Can I edit existing text in a PDF?', a: 'Yes! ToolBox India\'s PDF Editor lets you click on existing text in a PDF and edit it directly. You can change the text, font, size, color, and alignment — similar to tools like Sejda and Adobe Acrobat.' },
+                { q: 'Can I edit existing text in a PDF?', a: 'Yes! Free Toolbox\'s PDF Editor lets you click on existing text in a PDF and edit it directly. You can change the text, font, size, color, and alignment — similar to tools like Sejda and Adobe Acrobat.' },
                 { q: 'Can I add my signature to a PDF?', a: 'Yes! You can draw your signature directly, type it, or upload a signature image. Place it anywhere on the PDF and resize as needed.' },
-                { q: 'Is there a watermark added to my edited PDF?', a: 'No! ToolBox India is completely free with no watermarks, no limits, and no signup required. Your edited PDF is clean and professional.' },
+                { q: 'Is there a watermark added to my edited PDF?', a: 'No! Free Toolbox is completely free with no watermarks, no limits, and no signup required. Your edited PDF is clean and professional.' },
             ],
         },
         'tax-calculator': {
-            title: 'Income Tax Calculator India FY 2025-26 — Old vs New Regime Comparison | ToolBox India',
+            title: 'Income Tax Calculator India FY 2025-26 — Old vs New Regime Comparison | Free Toolbox',
             description: 'Free income tax calculator for FY 2025-26 (AY 2026-27). Compare Old vs New regime instantly — see slab breakdowns, deductions (80C, 80D, HRA, NPS, home loan), take-home pay & personalized tax-saving tips.',
             keywords: 'income tax calculator india, income tax calculator FY 2025-26, old vs new regime calculator, tax slab calculator india, income tax comparison, 80C deduction calculator, HRA exemption calculator, take home salary calculator, tax calculator 2025-26',
             ogTitle: 'Free Income Tax Calculator — Old vs New Regime FY 2025-26',
             ogDescription: 'Compare Old vs New tax regime for FY 2025-26. Slab breakdowns, deductions (80C/80D/HRA), take-home pay. Instant, free, private.',
             schemaType: 'WebApplication',
-            schemaName: 'Income Tax Calculator India — ToolBox India',
+            schemaName: 'Income Tax Calculator India — Free Toolbox',
             faq: [
                 { q: 'Is this calculator updated for FY 2025-26?', a: 'Yes! The calculator uses the latest tax slabs for FY 2025-26 (AY 2026-27) for both Old and New regime, including the new ₹12L exemption under New regime and all current deduction limits.' },
                 { q: 'What deductions are supported?', a: 'Section 80C (₹1.5L), 80D health insurance (self + parents), HRA exemption, NPS (80CCD), home loan interest (Section 24), standard deduction (₹75K), and more.' },
@@ -415,13 +415,13 @@ const ToolSEO = {
             ],
         },
         'sip-calculator': {
-            title: 'SIP Calculator — Mutual Fund Returns, Lumpsum, SWP, Goal Planner | Free Online | ToolBox India',
+            title: 'SIP Calculator — Mutual Fund Returns, Lumpsum, SWP, Goal Planner | Free Online | Free Toolbox',
             description: 'Free SIP & Investment Calculator with 6 modes: SIP, Lumpsum, Step-Up SIP, SWP, Goal-Based & SIP vs Lumpsum. LTCG tax, inflation adjustment, growth charts & year-wise breakdown.',
             keywords: 'sip calculator, sip calculator online, mutual fund calculator, sip return calculator, lumpsum calculator, step up sip calculator, swp calculator, systematic withdrawal plan, goal sip calculator, sip vs lumpsum, investment calculator india',
             ogTitle: 'Free SIP & Investment Calculator — 6 Modes with Tax & Inflation',
             ogDescription: 'SIP, Lumpsum, Step-Up, SWP, Goal-Based & SIP vs Lumpsum calculator. LTCG tax, inflation adjustment, growth charts. Free, instant, private.',
             schemaType: 'WebApplication',
-            schemaName: 'SIP & Investment Calculator — ToolBox India',
+            schemaName: 'SIP & Investment Calculator — Free Toolbox',
             faq: [
                 { q: 'What calculation modes are available?', a: 'Six modes: SIP (monthly investment), Lumpsum (one-time), Step-Up SIP (annual increment), SWP (systematic withdrawal), Goal-Based (reverse SIP to reach a target), and SIP vs Lumpsum (side-by-side comparison).' },
                 { q: 'Does it account for taxes?', a: 'Yes! The calculator applies Long-Term Capital Gains (LTCG) tax at 12.5% on equity gains exceeding ₹1.25 lakh per financial year, as per Budget 2024 rules.' },
@@ -429,13 +429,13 @@ const ToolSEO = {
             ],
         },
         'qr-code': {
-            title: 'QR Code Generator & Scanner — UPI, WiFi, vCard, Custom Colors & Logo | Free Online | ToolBox India',
+            title: 'QR Code Generator & Scanner — UPI, WiFi, vCard, Custom Colors & Logo | Free Online | Free Toolbox',
             description: 'Generate beautiful QR codes for URLs, UPI payments (GPay/PhonePe/Paytm), WiFi, contacts (vCard), WhatsApp, Email, Phone & SMS. Custom colors, dot styles & logo. Scan from camera or image. 100% free.',
             keywords: 'qr code generator, qr code generator online free, upi qr code generator, wifi qr code, vcard qr code, whatsapp qr code, qr code with logo, custom qr code, qr code scanner online, scan qr code from image, qr code creator',
             ogTitle: 'Free QR Code Generator & Scanner — UPI, WiFi, vCard & More',
             ogDescription: 'Generate stunning QR codes for UPI, WiFi, contacts, WhatsApp. Custom colors, dot styles, logo. Scan from camera. 100% free & private.',
             schemaType: 'WebApplication',
-            schemaName: 'QR Code Generator & Scanner — ToolBox India',
+            schemaName: 'QR Code Generator & Scanner — Free Toolbox',
             faq: [
                 { q: 'Can I generate a UPI QR code?', a: 'Yes! Enter your UPI ID, name, optional amount & note to create a payment QR code that works with Google Pay, PhonePe, Paytm, BHIM and all UPI apps.' },
                 { q: 'Can I add my logo to the QR code?', a: 'Yes! Upload any image (your brand logo, photo, icon) and it will be centered inside the QR code. The error correction ensures the QR remains scannable.' },
@@ -530,7 +530,7 @@ const ToolSEO = {
             'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'INR' },
             'isAccessibleForFree': true,
             'browserRequirements': 'Requires a modern browser with JavaScript enabled',
-            'creator': { '@type': 'Organization', 'name': 'ToolBox India', 'url': 'https://freetoolbox.co.in' },
+            'creator': { '@type': 'Organization', 'name': 'Free Toolbox', 'url': 'https://freetoolbox.co.in' },
         };
 
         // Add FAQ if present
@@ -564,11 +564,29 @@ const ToolSEO = {
 };
 
 // ===== URL Handler (Deep Linking) =====
+// Supports: ?tool=pdf-toolkit&feature=compress  → opens compress directly
+//           ?tool=image-compressor              → opens tool normally
 function handleURL() {
     const params = new URLSearchParams(window.location.search);
     const toolId = params.get('tool');
+    const feature = params.get('feature');
     if (toolId && ToolRegistry.get(toolId)) {
         Router.showTool(toolId);
+        // Deep-link into a specific feature (e.g. PDF Toolkit sub-tools)
+        // Sets _pendingFeature which initHub() picks up, plus retries as backup
+        if (feature) {
+            window._pendingFeature = feature;
+            const tryOpen = (attempts) => {
+                if (!window._pendingFeature) return; // already consumed by initHub
+                if (typeof window._openPdfToolkitFeature === 'function') {
+                    window._openPdfToolkitFeature(feature);
+                    window._pendingFeature = null;
+                } else if (attempts > 0) {
+                    setTimeout(() => tryOpen(attempts - 1), 150);
+                }
+            };
+            setTimeout(() => tryOpen(5), 300);
+        }
     }
 }
 
@@ -576,8 +594,22 @@ function handleURL() {
 window.addEventListener('popstate', () => {
     const params = new URLSearchParams(window.location.search);
     const toolId = params.get('tool');
+    const feature = params.get('feature');
     if (toolId) {
         Router.showTool(toolId);
+        if (feature) {
+            window._pendingFeature = feature;
+            const tryOpen = (attempts) => {
+                if (!window._pendingFeature) return;
+                if (typeof window._openPdfToolkitFeature === 'function') {
+                    window._openPdfToolkitFeature(feature);
+                    window._pendingFeature = null;
+                } else if (attempts > 0) {
+                    setTimeout(() => tryOpen(attempts - 1), 150);
+                }
+            };
+            setTimeout(() => tryOpen(5), 300);
+        }
     } else {
         Router.showHome();
     }
@@ -631,5 +663,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle deep links after tools are registered
     setTimeout(() => handleURL(), 100);
 
-    console.log('[ToolBox India] App initialized. Available tools:', Object.keys(ToolRegistry.tools));
+    console.log('[Free Toolbox] App initialized. Available tools:', Object.keys(ToolRegistry.tools));
 });

@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — PDF Editor
+   Free Toolbox — PDF Editor
    Full-featured PDF annotation & editing tool
    
    Libraries (loaded on demand):

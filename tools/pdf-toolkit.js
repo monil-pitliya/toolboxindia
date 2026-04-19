@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — PDF Toolkit (All-in-One)
+   Free Toolbox — PDF Toolkit (All-in-One)
 
    Merge, Split, Extract, Delete, Rotate, Reorder,
    PDF→Images, Compress (with target size), PDF→Word,
@@ -275,8 +275,19 @@
             document.querySelectorAll('.pdftk-feature-card').forEach(card => {
                 card.addEventListener('click', () => openFeature(card.dataset.feature));
             });
+
+            // Deep-link: if URL has ?feature=compress, auto-open that feature
+            if (window._pendingFeature) {
+                openFeature(window._pendingFeature);
+                window._pendingFeature = null;
+            }
         }, 50);
     }
+
+    // Expose for deep-linking from URL handler
+    window._openPdfToolkitFeature = function(featureId) {
+        openFeature(featureId);
+    };
 
     function openFeature(featureId) {
         const feature = FEATURES.find(f => f.id === featureId);
@@ -1489,7 +1500,7 @@
         updateLoading('Creating Word document...', 'Building .docx file');
 
         const doc = new docxLib.Document({
-            creator: 'ToolBox India',
+            creator: 'Free Toolbox',
             description: `Converted from ${loadedFileName}`,
             sections,
         });

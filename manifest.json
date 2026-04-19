@@ -1,6 +1,6 @@
 {
-  "name": "ToolBox India — Free Online Tools",
-  "short_name": "ToolBox India",
+  "name": "Free Toolbox — Free Online Tools",
+  "short_name": "Free Toolbox",
   "description": "India's #1 free online toolbox. Compress images, edit PDFs, generate QR codes, calculate tax & SIP. 100% private, no upload needed.",
   "start_url": "/toolboxindia/index.html",
   "scope": "/toolboxindia/",

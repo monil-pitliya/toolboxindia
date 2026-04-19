@@ -1,4 +1,4 @@
-# robots.txt for ToolBox India
+# robots.txt for Free Toolbox
 # https://freetoolbox.co.in
 # Last updated: 2026-04-13
 

@@ -1,4 +1,4 @@
-// Social Sharing Module for ToolBox India
+// Social Sharing Module for Free Toolbox
 window.SocialShare = {
     getShareData(toolId) {
         const baseUrl = 'https://freetoolbox.co.in';
@@ -15,7 +15,7 @@ window.SocialShare = {
             'sip-calculator': 'SIP Calculator',
             'qr-code': 'QR Code Generator'
         };
-        const name = toolNames[toolId] || 'ToolBox India';
+        const name = toolNames[toolId] || 'Free Toolbox';
         const url = toolId ? `${baseUrl}/?tool=${toolId}` : baseUrl;
         const text = `Check out this free ${name} tool — works 100% in your browser, no upload needed!`;
         return { name, url, text };
@@ -69,7 +69,7 @@ window.SocialShare = {
         const { text, url, name } = this.getShareData(toolId);
         if (navigator.share) {
             try {
-                await navigator.share({ title: name + ' — ToolBox India', text, url });
+                await navigator.share({ title: name + ' — Free Toolbox', text, url });
                 if (window.trackShare) trackShare('native', toolId);
             } catch(e) { /* user cancelled */ }
         } else {
@@ -101,4 +101,4 @@ window.SocialShare = {
     }
 };
 
-console.log('[ToolBox India] Social sharing module loaded.');
+console.log('[Free Toolbox] Social sharing module loaded.');

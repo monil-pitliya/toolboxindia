@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Word to PDF Converter
+   Free Toolbox — Word to PDF Converter
 
    Converts Word (.docx) files to PDF.
    Parses the DOCX (ZIP with XML + media),

@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — PPT to PDF Converter
+   Free Toolbox — PPT to PDF Converter
 
    Converts PowerPoint (.pptx) files to PDF.
    Parses the PPTX (ZIP containing XML + media),

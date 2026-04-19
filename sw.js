@@ -1,7 +1,7 @@
-// Service Worker for ToolBox India
+// Service Worker for Free Toolbox
 // Provides offline support, caching strategies, and performance optimization
 
-const CACHE_NAME = 'toolbox-india-v1';
+const CACHE_NAME = 'free-toolbox-v1';
 
 // Assets to cache on install (app shell)
 const PRECACHE_ASSETS = [

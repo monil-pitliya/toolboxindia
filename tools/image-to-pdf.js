@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Image to PDF Converter
+   Free Toolbox — Image to PDF Converter
 
    Converts one or multiple images into a single PDF.
    Users can reorder images, pick page size & orientation,

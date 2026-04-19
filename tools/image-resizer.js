@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — Image Resizer
+   Free Toolbox — Image Resizer
    Full-featured client-side image resizing tool
    
    Features:

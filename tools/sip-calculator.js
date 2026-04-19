@@ -1,5 +1,5 @@
 /* =============================================
-   ToolBox India — SIP & Investment Calculator
+   Free Toolbox — SIP & Investment Calculator
 
    Modes: SIP, Lumpsum, Step-Up SIP, SWP,
           Goal-Based (Reverse SIP), SIP vs Lumpsum
