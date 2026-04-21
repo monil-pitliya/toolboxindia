@@ -491,6 +491,15 @@ const ToolSEO = {
         // Remove tool-specific JSON-LD
         const el = document.getElementById('toolJsonLd');
         if (el) el.remove();
+
+        // Restore homepage FAQPage JSON-LD
+        if (this._homeFaqContent && !document.getElementById('homeFaqJsonLd')) {
+            const faqEl = document.createElement('script');
+            faqEl.type = 'application/ld+json';
+            faqEl.id = 'homeFaqJsonLd';
+            faqEl.textContent = this._homeFaqContent;
+            document.head.appendChild(faqEl);
+        }
     },
 
     // Helpers
@@ -518,6 +527,13 @@ const ToolSEO = {
         // Remove old tool JSON-LD if any
         let el = document.getElementById('toolJsonLd');
         if (el) el.remove();
+
+        // Hide homepage FAQPage to prevent "Duplicate field FAQPage" error
+        const homeFaq = document.getElementById('homeFaqJsonLd');
+        if (homeFaq) {
+            if (!this._homeFaqContent) this._homeFaqContent = homeFaq.textContent;
+            homeFaq.remove();
+        }
 
         const jsonLd = {
             '@context': 'https://schema.org',
